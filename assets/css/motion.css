@@ -1,0 +1,15 @@
+/* motion.css — one motion layer for the whole site (Round 4)
+   Transform/opacity only. Nothing is hidden waiting for JS. */
+
+/* Anchor jumps are smoothed in JS (components.js) so that programmatic
+   scrollTo() is never hijacked. Reduced motion falls back to instant. */
+[id] { scroll-margin-top: 88px; }
+
+/* scroll progress + shared motion states */
+[data-scroll-progress]{position:fixed;top:0;left:0;right:0;height:2px;z-index:9999;pointer-events:none;
+  background:linear-gradient(90deg,#D8A84E,#38BDF8);transform:scaleX(0);transform-origin:0 50%}
+.mv-off [data-scroll-progress]{display:none}
+[data-reveal],[data-stagger]>*{will-change:opacity,transform}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal],[data-stagger]>*{opacity:1 !important;transform:none !important;transition:none !important}
+}

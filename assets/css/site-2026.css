@@ -1,0 +1,346 @@
+/* ============================================================================
+   site-2026.css — universal motion + polish layer, loaded by every page.
+   Purely additive: no existing rule is redefined except hover/focus states that
+   had none. Everything here degrades to a readable static page.
+   ========================================================================== */
+
+:root { --px-ease: cubic-bezier(.22,.61,.36,1); }
+
+/* ---------------------------------------------------------------- hero ----- */
+.hero, .ind-hero { position: relative; overflow: hidden; }
+.hero { --hp-mx: 50%; --hp-my: 38%; }
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 32% at 22% 30%, rgba(56, 189, 248, .17), transparent 68%),
+    radial-gradient(30% 26% at 76% 24%, rgba(56, 189, 248, .07), transparent 70%),
+    radial-gradient(42% 36% at 62% 84%, rgba(201, 164, 76, .15), transparent 72%);
+  filter: blur(14px) saturate(120%);
+  animation: px-drift 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes px-drift {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1.02) rotate(0deg); }
+  50%  { transform: translate3d(2.5%, 2%, 0) scale(1.10) rotate(1.5deg); }
+  100% { transform: translate3d(1%, -2.5%, 0) scale(1.04) rotate(-1deg); }
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(340px 340px at var(--hp-mx) var(--hp-my),
+              rgba(201, 164, 76, .10), rgba(56, 189, 248, .05) 38%, transparent 72%);
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.hero--panel.px-lit .hero-panel::before { opacity: 1; }
+
+.px-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .04em; }
+.px-word > i { display: inline-block; font-style: inherit; will-change: transform, opacity; }
+
+.hero__title em, .ind-hero__title em {
+  background-size: 200% 100% !important;
+  animation: px-flow 14s linear infinite;
+}
+@keyframes px-flow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ------------------------------------------------------- cards & buttons --- */
+@media (hover: hover) and (pointer: fine) {
+  .card, .pf, .tile, .stat, .pcard {
+    transition: transform .45s var(--px-ease), box-shadow .45s var(--px-ease),
+                border-color .45s var(--px-ease);
+    will-change: transform;
+  }
+  .card:hover, .pf:hover, .tile:hover, .stat:hover, .pcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 44px -22px rgba(5, 6, 10, .55);
+  }
+}
+
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 28%, rgba(255,255,255,.26) 50%, transparent 72%);
+  transform: translateX(-130%);
+  transition: transform .75s var(--px-ease);
+}
+.btn:hover::after { transform: translateX(130%); }
+
+a:focus-visible, button:focus-visible, summary:focus-visible,
+.btn:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid #c9a44c;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* --------------------------------------------------------- scroll reveal --- */
+.px-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .85s var(--px-ease), transform .85s var(--px-ease);
+}
+.px-reveal.px-in { opacity: 1; transform: none; }
+
+/* --------------------------------------------------- reading progress bar -- */
+#px-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #38bdf8, #d946ef 55%, #c9a44c);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------- header shrink -- */
+@media (hover: hover) and (pointer: fine) {
+  .site-header, header.hdr, .nav, .masthead {
+    transition: padding .4s var(--px-ease), background-color .4s var(--px-ease),
+                box-shadow .4s var(--px-ease);
+  }
+}
+
+/* ------------------------------------------------- tap targets (WCAG 2.5.8) */
+footer a, .footer a, .site-footer a, .foot a,
+.footer-nav a, .nav-utility a,
+.utility__links a, .utility__links button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+/* --------------------------------------------------------- reduced motion -- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel::after, .hero__title em, .ind-hero__title em { animation: none; }
+  .px-word > i { transform: none !important; opacity: 1 !important; }
+  .px-reveal { opacity: 1 !important; transform: none !important; }
+  .btn::after { display: none; }
+  #px-progress { display: none; }
+}
+
+
+/* ============================================================================
+   DENSITY LAYER — .px-dense (index, capabilities, solutions)
+   Oversized section intros, taller rhythm, alternating offset columns.
+   Applied by adding one class to <body>; nothing here touches other pages.
+   ========================================================================== */
+
+.px-dense .band { padding-block: clamp(72px, 8vw, 132px); }
+.px-dense .band--deep { padding-block: clamp(84px, 9vw, 152px); }
+
+/* oversized section intros */
+.px-dense .band > .wrap > .stack > h2 {
+  font-size: clamp(1.9rem, 1.05rem + 2.7vw, 3.35rem);
+  line-height: 1.06;
+  letter-spacing: -.028em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.px-dense .band > .wrap > .stack > h2 + p,
+.px-dense .band > .wrap > .stack > .lead {
+  font-size: clamp(1.02rem, .96rem + .32vw, 1.2rem);
+  max-width: 60ch;
+}
+.px-dense .band > .wrap > .stack > .eyebrow { margin-bottom: .2rem; }
+
+/* alternating offset split: the visual column lifts, then drops, per band */
+.px-dense .split { gap: clamp(28px, 4vw, 76px); align-items: center; }
+@media (min-width: 900px) {
+  .px-dense .band:nth-of-type(odd) .split > :nth-child(2) { margin-block: -34px 34px; }
+  .px-dense .band:nth-of-type(even) .split > :nth-child(2) { margin-block: 34px -34px; }
+  .px-dense .split > :only-child { margin-block: 0; }
+}
+
+/* figures read as deliberate blocks, not inline images */
+.px-dense .split figure, .px-dense .split img, .px-dense .pf {
+  border-radius: 16px;
+}
+.px-dense .band .wrap--wide > figure { margin-block: clamp(24px, 3vw, 44px); }
+
+/* denser, even card grids */
+.px-dense .tiles, .px-dense .grid, .px-dense .pf-grid {
+  gap: clamp(14px, 1.8vw, 26px);
+}
+.px-dense .tiles > .card { min-height: 0; }
+
+/* a hairline under each oversized intro keeps long pages legible */
+.px-dense .band > .wrap > .stack > h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin-top: .7em;
+  background: currentColor;
+  opacity: .18;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .px-dense .band .split > :nth-child(2) { margin-block: 0; }
+}
+
+
+/* ============================================================================
+   READING COMFORT & ANCHORS — measured fixes, all pages
+   ========================================================================== */
+
+/* [1] Measure. Paragraphs ran to 105 characters per line at 1440 (optimal is
+   60-75); 7 of 35 paragraphs on a single page were over. Cards and pills keep
+   their own width. */
+.band p, .band > .wrap > .stack > p, .band .stack > p,
+.ind-hero p, .hero__sub, .prose p, .legal p {
+  max-width: 68ch;
+}
+.band .card p, .band .card__body, .band .tile p, .band .pf p,
+.band .acc__panel p, .pill, .hero-pills p {
+  max-width: none;
+}
+
+/* [2] Anchor jumps landed underneath the 85px sticky header. */
+[id] { scroll-margin-top: 96px; }
+h2[id], h3[id], section[id] { scroll-margin-top: 104px; }
+
+/* [3] Numeric columns should align in the mock ledgers and stat rows. */
+table, .ledger-mini__t, .stats, .stat, .kv, .evidence { font-variant-numeric: tabular-nums; }
+
+/* [4] Line-setting polish. */
+.band p, .prose p, .legal p { text-wrap: pretty; hyphens: none; }
+.band .card__body { line-height: 1.55; }
+h1, h2, h3 { text-wrap: balance; }
+
+/* [5] Images never overflow their block and never publish a layout shift. */
+figure img, .pf img, .band img { display: block; max-width: 100%; height: auto; }
+
+/* [6] Long tables stay readable on a phone instead of crushing columns. */
+@media (max-width: 640px) {
+  table { font-size: .92em; }
+  table th, table td { padding-block: 10px; }
+}
+
+/* ------------------------------------------------------- high contrast mode */
+@media (forced-colors: active) {
+  .card, .pf, .tile, .stat, .pcard { border: 1px solid CanvasText; }
+  .px-reveal { opacity: 1 !important; transform: none !important; }
+  .hero__title em, .ind-hero__title em {
+    -webkit-text-fill-color: CanvasText;
+    color: CanvasText;
+    background: none;
+  }
+  #px-progress { display: none; }
+}
+
+/* ------------------------------- browsers without background-clip on text -- */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero__title em, .ind-hero__title em {
+    -webkit-text-fill-color: currentColor;
+    color: inherit;
+    background-image: none;
+  }
+}
+
+
+/* ============================================================================
+   LEDGER SYSTEM — .px-ledger
+   The credit ledger is the brand device: every section header becomes a ruled
+   line item (01 / nn) with a hairline to the margin. Numbers are mono.
+   Injected by site-2026.js, so no page markup has to change.
+   ========================================================================== */
+
+.px-ledger .band > .wrap > .stack { position: relative; }
+.px-ledger .ledger-no {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  font-family: var(--font-mono, "IBM Plex Mono", ui-monospace, monospace);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #a9832f;
+  font-variant-numeric: tabular-nums;
+}
+.px-ledger .ledger-no::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201,164,76,.5), rgba(201,164,76,.04));
+}
+.px-ledger .ledger-no b { font-weight: 500; color: #6f5716; }
+
+/* the short hairline under intros is redundant once the rule exists */
+.px-ledger .band h2::after { display: none; }
+.px-ledger .ledger-no + h2, .px-ledger .ledger-no + h3 { margin-top: 0; }
+
+/* numbers are facts: mono, tabular, right-aligned */
+.px-ledger .band table,
+.px-ledger .ledger-mini__t,
+.px-ledger .stat b,
+.px-ledger .evidence__k,
+.px-ledger .card__kicker {
+  font-variant-numeric: tabular-nums;
+}
+.px-ledger .band table th,
+.px-ledger .band table td { font-feature-settings: "tnum" 1; }
+
+/* section rhythm tightens once the rule carries the structure */
+.px-ledger .band > .wrap > .stack > h2 { margin-top: 0; }
+
+
+/* ============================================================================
+   DIAGRAM GEOMETRY — one shape language for the hub (assets/hub.js)
+   Strokes, radii and accents normalise to the two-token palette so a pod
+   diagram looks like the same instrument on every page.
+   ========================================================================== */
+
+.px-ledger .hub { --geo-stroke: 1px; --geo-radius: 10px; }
+.px-ledger .hub .ring,
+.px-ledger .hub .slot,
+.px-ledger .hub .pk,
+.px-ledger .hub .edot { stroke-width: var(--geo-stroke, 1px); }
+.px-ledger .hub .ring { stroke: rgba(201, 164, 76, .38); }
+.px-ledger .hub .slot { stroke: rgba(255, 255, 255, .14); }
+.px-ledger .hub .pk { stroke: rgba(56, 189, 248, .45); }
+.px-ledger .hub .core { stroke: rgba(201, 164, 76, .65); stroke-width: 1px; }
+.px-ledger .hub .card { border-radius: var(--geo-radius, 10px); }
+.px-ledger .hub .edot { fill: rgba(201, 164, 76, .9); }
+ .px-ledger .hub .ic { opacity: .92; }
+/* Round 2 — hero secondary CTA stays visible on phones */
+@media (max-width: 720px) {
+  .hero__cta .btn--onDark { display: inline-flex; }
+}
+
+/* Round 4: no global smooth scroll — it hijacked programmatic scroll and made
+   long pages feel stuck. Anchor jumps are smoothed in components.js instead. */
+html{scroll-behavior:auto}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:auto}}
+
+/* Round 5: ledger number on dark bands was 2.8:1 */
+.px-ledger .ledger-no b{color:#E0B45C}
+
+/* Homepage hero: one vector layer (9 KB), no raster. Sits behind the copy at low
+   opacity so the headline keeps its contrast; hidden under reduced-motion-free
+   small screens where it would only add weight. */
+.hero-art { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("../img/art/meridian.svg") center 58% / cover no-repeat;
+  opacity: .58; mix-blend-mode: screen; }
+@media (max-width: 720px) { .hero-art { opacity: .28; } }
+.hero .wrap { position: relative; z-index: 1; }
+
+/* one primary action per viewport: the header CTA stops glowing so the hero CTA wins */
+.hdr .btn--primary { box-shadow: none; }
+.hdr .btn--primary:hover { box-shadow: 0 6px 18px rgba(216,168,78,.25); }

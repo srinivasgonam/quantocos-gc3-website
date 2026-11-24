@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quantocos.com/products/d3.html#webpage",
+      "url": "https://quantocos.com/products/d3.html",
+      "name": "D3 — document management with verification and signing | Quantocos",
+      "description": "D3, Due Diligence David, is Quantocos's in-development document management and verification system: a unique ID per issued document, a public verification space, and digital signing for legal and financial documents.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/products/d3.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/products/d3.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is D3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "D3, Due Diligence David, is a document management tool for legal and financial work, in development. Every document the group issues gets a unique identifier that a third party can check in a public verification space."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does verification work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A person holding the document — a candidate, a vendor, a bank — enters its identifier in the public space and confirms that the document was genuinely issued, rather than trusting a letterhead image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does D3 support digital signing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Digital signing is part of the product, so a document can be issued, signed and later verified without the original parties being involved."
+          }
+        }
+      ]
+    }
+  ]
+}

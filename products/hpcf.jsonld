@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quantocos.com/products/hpcf.html#webpage",
+      "url": "https://quantocos.com/products/hpcf.html",
+      "name": "HPCF — HR portal with gamification and credits | Quantocos",
+      "description": "HPCF is Quantocos's in-development Human Performance and Culture Framework: leave, payroll and attendance as the base, with credits for hours saved, guild leaderboards and rewards on top.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/products/hpcf.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/products/hpcf.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is HPCF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HPCF is the Human Performance and Culture Framework, in development. It is the HR portal — leave, payroll, attendance — with a gamification layer that rewards time saved rather than hours logged, through credits and guild leaderboards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are credits in HPCF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credits are earned when someone's work saves the group time. They accumulate on a guild leaderboard and can be monetised, which is how the incentive points at leverage instead of attendance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the guild structure fit in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every employee belongs to one guild, and guild leaders are accountable for developing the people in it. HPCF makes that visible instead of aspirational."
+          }
+        }
+      ]
+    }
+  ]
+}

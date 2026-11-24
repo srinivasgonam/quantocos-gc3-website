@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quantocos.com/products/sigma.html#webpage",
+      "url": "https://quantocos.com/products/sigma.html",
+      "name": "Sigma — memory management outside the model | Quantocos",
+      "description": "Sigma is Quantocos's in-development memory layer: capture the fragment worth keeping from any chat surface, compile it into reusable memory, skills and datasets, and serve it back to agents.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/products/sigma.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/products/sigma.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Sigma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sigma is a memory management tool, in development. It captures fragments worth keeping from any chat surface, compiles them into memory, turns them into skills and modules, and serves the result to agents and to Qore."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from a chat history?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A chat history records what was said. Sigma keeps what was learned, in a form another person or agent can reuse, with the fragments composited into modules rather than left as transcripts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does the memory live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the tenant it belongs to, served through Apara, with role-based access control. Memory that cannot be permissioned is not much use to an enterprise."
+          }
+        }
+      ]
+    }
+  ]
+}

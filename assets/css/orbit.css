@@ -1,0 +1,136 @@
+/* ============================================================
+   Quantocos Capability Orbit
+   Palette: BINDU v4 (Void navy + Soma gold + Shunya warm light)
+   Rule from the Bindu system: "gold is a button, not a highlight"
+   -> structure is Shunya at low alpha, gold marks action and core only.
+   Motion: CSS/SVG only. No JavaScript, no new dependency.
+   ============================================================ */
+.orbit{
+  --oc-void:#080B12; --oc-void-2:#111827;
+  --oc-soma:#C9911A; --oc-soma-light:#F2D582; --oc-soma-deep:#8B6410;
+  --oc-shunya:#FAF8F2; --oc-mute:#A8A296; --oc-mute-2:#CCC7B8;
+  --oc-line:rgba(250,248,242,.08); --oc-line-2:rgba(250,248,242,.14);
+  --oc-sel:rgba(201,145,26,.12);
+  --oc-size: clamp(300px, 42vw, 540px);
+  position: relative; isolation: isolate;
+  padding-block: clamp(56px,6.5vw,112px);
+}
+.orbit__eyebrow{
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--oc-soma); margin: 0 0 14px;
+}
+.orbit__title{
+  margin: 0 0 14px; font-size: clamp(28px,3.3vw,46px); line-height: 1.2;
+  letter-spacing: -.02em; color: var(--oc-shunya);
+}
+.orbit__sub{ margin: 0 0 clamp(26px,4vw,44px); color: var(--oc-mute); max-width: none; }
+.orbit__stage{ position: relative; width: var(--oc-size); height: var(--oc-size); margin: clamp(6px,2vw,20px) auto 0; }
+.orbit__wires{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.orbit__ring{ fill:none; stroke:var(--oc-line-2); stroke-width:1; }
+.orbit__ring--hair{ stroke:var(--oc-line); }
+.orbit__ring--dash{ stroke:rgba(201,145,26,.34); stroke-width:1; stroke-dasharray:2 11; stroke-linecap:round; }
+.orbit__ring--outer{ stroke:rgba(250,248,242,.10); stroke-dasharray:1 20; stroke-linecap:round; }
+.orbit__spin{ transform-origin:280px 280px; animation:oc-ccw 120s linear infinite; }
+.orbit__spin--slow{ transform-origin:280px 280px; animation:oc-cw 92s linear infinite; }
+.orbit__spin--rev{ transform-origin:280px 280px; animation:oc-ccw 64s linear infinite; }
+.orbit__spoke{ stroke:rgba(250,248,242,.09); stroke-width:1; }
+.orbit__particle{ fill:var(--oc-soma-light); filter:drop-shadow(0 0 5px rgba(201,145,26,.8)); }
+
+.orbit__core{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:29%; aspect-ratio:1; border-radius:50%;
+  display:grid; place-items:center; gap:2px; text-align:center;
+  background:radial-gradient(circle at 50% 36%, #16203a 0%, var(--oc-void-2) 58%, var(--oc-void) 100%);
+  border:1px solid rgba(201,145,26,.45);
+  box-shadow:0 0 0 7px rgba(201,145,26,.06), 0 26px 64px -22px rgba(0,0,0,.92), inset 0 0 34px rgba(201,145,26,.10);
+  z-index:3;
+}
+.orbit__core img{ width:46%; height:auto; display:block; }
+.orbit__core-tag{ margin:0; font-family:var(--font-mono,ui-monospace,monospace); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--oc-soma-light); }
+.orbit__core::after{ content:""; position:absolute; inset:-15px; border-radius:50%; border:1px solid rgba(201,145,26,.16); animation:oc-breathe 7.5s ease-in-out infinite; }
+
+.orbit__node{
+  position:absolute; left:var(--x); top:var(--y); transform:translate(-50%,-50%);
+  width:min(132px, calc(var(--oc-size) * .25)); display:grid; justify-items:center; gap:6px;
+  padding:8px 6px; border-radius:14px; text-decoration:none; z-index:4;
+  transition:background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.orbit__dot{
+  width:12px; height:12px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--oc-soma-light), var(--oc-soma) 64%);
+  box-shadow:0 0 0 4px rgba(201,145,26,.12), 0 0 15px rgba(201,145,26,.45);
+  animation:oc-pulse 5.5s ease-in-out infinite; animation-delay:var(--d,0s);
+}
+.orbit__label{ font-family:var(--font-display,inherit); font-weight:600; font-size:clamp(13px,1vw,15px); line-height:1.2; color:var(--oc-shunya); white-space:nowrap; }
+.orbit__meta{ font-family:var(--font-mono,ui-monospace,monospace); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--oc-mute); white-space:nowrap; }
+.orbit__node:hover,.orbit__node:focus-visible{ background:var(--oc-sel); outline:none; box-shadow:0 0 0 1px rgba(201,145,26,.5); transform:translate(-50%,-50%) translateY(-2px); }
+.orbit__node:hover .orbit__label,.orbit__node:focus-visible .orbit__label{ color:var(--oc-soma-light); }
+.orbit__node:hover .orbit__dot{ box-shadow:0 0 0 5px rgba(201,145,26,.22), 0 0 24px rgba(201,145,26,.85); }
+.orbit__node--up{ display:flex; flex-direction:column-reverse; }
+.orbit__legend{ list-style:none; margin:clamp(22px,4vw,38px) auto 0; padding:0; display:none; gap:12px 24px; }
+.orbit__legend a{ color:var(--oc-shunya); text-decoration:none; display:grid; gap:2px; }
+.orbit__legend a:hover{ color:var(--oc-soma-light); }
+
+@keyframes oc-cw{ to{ transform:rotate(360deg); } }
+@keyframes oc-ccw{ to{ transform:rotate(-360deg); } }
+@keyframes oc-breathe{ 0%,100%{ opacity:.45; transform:scale(1); } 50%{ opacity:.95; transform:scale(1.02); } }
+@keyframes oc-pulse{ 0%,100%{ opacity:.7; } 50%{ opacity:1; } }
+
+@media (max-width:880px){ .orbit{ --oc-size:min(84vw,420px); } .orbit__label{ font-size:12px; } .orbit__meta{ display:none; } }
+@media (max-width:560px){ .orbit__stage{ display:none; } .orbit__legend{ display:grid; grid-template-columns:1fr 1fr; } }
+@media (prefers-reduced-motion:reduce){
+  .orbit__spin,.orbit__spin--slow,.orbit__spin--rev,.orbit__core::after,.orbit__dot{ animation:none; }
+  .orbit__particle{ display:none; }
+}
+
+/* ==== capability orbit v2: starfield, perspective grid, six priced cards ==== */
+.orbit2{position:relative;padding:clamp(64px,8vw,110px) 0;background:#04060b;color:#f7f6f2;overflow:hidden}
+.orbit2__head{max-width:720px;margin:0 auto clamp(30px,4vw,54px);text-align:center;position:relative;z-index:3}
+.orbit2__eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e0a63a;margin:0 0 12px}
+.orbit2__title{font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.02em;margin:0 0 12px;color:#f7f6f2}
+.orbit2__sub{margin:0;color:rgba(247,246,242,.66);font-size:16px;line-height:1.55}
+.orbit2__stage{position:relative;height:min(86vw,720px);max-width:1100px;margin:0 auto;isolation:isolate}
+.orbit2__grid,.orbit2__stars{position:absolute;inset:-8% -12%;pointer-events:none;z-index:0}
+.orbit2__grid{background-image:linear-gradient(rgba(120,180,255,.10) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(120,180,255,.10) 1px,transparent 1px);
+  background-size:54px 54px;transform:perspective(760px) rotateX(62deg) translateY(24%) scale(1.5);
+  transform-origin:50% 100%;mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.35) 55%,transparent 88%)}
+.orbit2__stars{background-image:radial-gradient(1.5px 1.5px at 12% 18%,rgba(255,255,255,.9),transparent 60%),
+  radial-gradient(1.4px 1.4px at 76% 12%,rgba(255,255,255,.75),transparent 60%),
+  radial-gradient(1.6px 1.6px at 34% 72%,rgba(255,255,255,.7),transparent 60%),
+  radial-gradient(1.3px 1.3px at 88% 64%,rgba(255,255,255,.65),transparent 60%),
+  radial-gradient(1.2px 1.2px at 54% 34%,rgba(255,255,255,.55),transparent 60%),
+  radial-gradient(1.4px 1.4px at 22% 48%,rgba(255,255,255,.5),transparent 60%),
+  radial-gradient(1.2px 1.2px at 66% 84%,rgba(255,255,255,.45),transparent 60%)}
+.orbit2__ring{position:absolute;left:50%;top:50%;translate:-50% -50%;border-radius:50%;z-index:1;pointer-events:none}
+.orbit2__ring--1{width:30%;aspect-ratio:1;border:1px solid rgba(242,213,138,.30)}
+.orbit2__ring--2{width:54%;aspect-ratio:1;border:1px dashed rgba(25,224,194,.22)}
+.orbit2__ring--3{width:78%;aspect-ratio:1;border:1px solid rgba(247,246,242,.10)}
+.orbit2__hub{position:absolute;left:50%;top:50%;translate:-50% -50%;width:23%;min-width:150px;aspect-ratio:1;border-radius:50%;
+  display:grid;place-content:center;gap:4px;text-align:center;z-index:4;
+  background:radial-gradient(circle at 50% 30%,#0b1018,#05070c 72%);border:1px solid rgba(247,246,242,.16);
+  box-shadow:0 0 0 10px rgba(5,7,12,.72),0 0 60px rgba(201,145,26,.18)}
+.orbit2__hubMark{font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.02em}
+.orbit2__hubMark sup{font-size:.5em;vertical-align:super}
+.orbit2__hubLabel{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.18em;color:rgba(247,246,242,.6)}
+.orbit2__card{position:absolute;left:50%;top:50%;width:190px;padding:14px 16px;border-radius:14px;z-index:3;
+  display:grid;grid-template-columns:26px 1fr;gap:2px 10px;align-items:center;text-decoration:none;
+  background:rgba(14,18,26,.92);border:1px solid rgba(247,246,242,.12);backdrop-filter:blur(2px);
+  transform:translate(-50%,-50%) rotate(calc(var(--i) * 60deg)) translateY(calc(-1 * var(--R))) rotate(calc(var(--i) * -60deg));
+  transition:border-color .2s,box-shadow .2s}
+.orbit2__card:hover{border-color:rgba(201,145,26,.5);box-shadow:0 12px 34px rgba(0,0,0,.45)}
+.orbit2__card svg{grid-row:span 2;width:22px;height:22px;fill:none;stroke:#19e0c2;stroke-width:1.5;stroke-linejoin:round}
+.orbit2__card:first-of-type svg{fill:rgba(25,224,194,.18)}
+.orbit2__card strong{font-size:14px;color:#f7f6f2;letter-spacing:-.01em}
+.orbit2__card span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#e0a63a}
+.orbit2__stage{--R:min(30vw,232px)}
+@container (min-width:0px){}
+@media (max-width:860px){
+  .orbit2__stage{height:auto;display:grid;gap:12px;padding:18px 0 6px}
+  .orbit2__ring,.orbit2__grid,.orbit2__stars{display:none}
+  .orbit2__hub{position:relative;left:auto;top:auto;translate:none;width:auto;aspect-ratio:auto;min-width:0;
+    padding:18px;border-radius:16px;margin:0 auto 8px}
+  .orbit2__card{position:relative;left:auto;top:auto;transform:none;width:auto}
+}
+@media (prefers-reduced-motion:no-preference){.orbit2__ring--2{animation:hvspin 80s linear infinite}}

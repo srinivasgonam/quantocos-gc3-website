@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://quantocos.com/capabilities/backoffice.html#webpage",
+      "url": "https://quantocos.com/capabilities/backoffice.html",
+      "name": "Back office and operations catalogue — finance, HR, compliance | Quantocos",
+      "description": "The back office and operations catalogue covers business operations and process support, finance and accounting support, HR operations and onboarding, compliance and documentation, vendor administration, research and data operations.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/capabilities/backoffice.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/capabilities/backoffice.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is in the back office catalogue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eight service lines: business operations and process support, finance and accounting support, HR operations and onboarding, compliance and documentation, vendor and procurement administration, research and market intelligence, data operations, and document processing and review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as outsourcing a department?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is closer to a shared function than to body-shopping. The work sits inside a pod with a named manager and a visible credit pool, and the credit rate is set out in your engagement letter, with no per-seat markup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can back-office work be combined with creative or marketing work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and that is usually the point: a client's finance and HR requests run through the same portal and the same credit pool as their campaign work, with one monthly number."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is compliance work handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compliance and documentation support is delivered to documentation standards held by the Operational Excellence Council, and D3 — the document verification product — provides a unique ID and a public verification space for documents issued."
+          }
+        }
+      ]
+    }
+  ]
+}

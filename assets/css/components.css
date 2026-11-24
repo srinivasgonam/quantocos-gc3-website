@@ -1,0 +1,569 @@
+/* ==========================================================================
+   components.css — Round 4
+   1. Contrast tokens per band
+   2. Five stages widget (left tablist, brand ring fill)
+   3. Hero ribbons, count-up strip
+   ========================================================================== */
+
+/* 1. TOKENS — one place, per band type ------------------------------------
+   Dark bands: light text. Light bands: #0B1220. Muted values still pass
+   WCAG AA (4.5:1) against their own band background. */
+:root {
+  --c-head-dark: #F4F6FA;
+  --c-body-dark: #CED6E1;
+  --c-muted-dark: #B8C2D0;
+  --c-line-dark: rgba(255, 255, 255, .16);
+
+  --c-head-light: #0B1220;
+  --c-body-light: #26313F;
+  --c-muted-light: #3D4A5C;
+  --c-line-light: rgba(11, 18, 32, .14);
+}
+
+/* NOTE Round 5: band names (--light / --alt / --paper) do not map to light or dark
+   surfaces consistently across pages, so no colour is forced by band name. Text
+   inherits the surface colour the page already declares; only real defects are
+   overridden below. */
+
+/* a button on a light card must not use the white-text variant */
+.card :is(.btn--onDark) { color: var(--c-head-light); border-color: var(--c-line-light); }
+
+/* 2. FIVE STAGES ---------------------------------------------------------- */
+.stg { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: clamp(28px, 4vw, 64px); align-items: start; margin-top: 40px; }
+
+.stg__nav { position: relative; display: flex; flex-direction: column; gap: 4px; padding-left: 22px; }
+.stg__nav::before {                       /* thin progress line */
+  content: ""; position: absolute; left: 6px; top: 14px; bottom: 14px; width: 2px;
+  background: rgba(255, 255, 255, .16); border-radius: 2px;
+}
+.stg__fill {
+  position: absolute; left: 6px; top: 14px; width: 2px; height: 0;
+  background: linear-gradient(180deg, #D8A84E, #38BDF8);
+  border-radius: 2px; transition: height .5s cubic-bezier(.22, 1, .36, 1);
+}
+.stg__pill {
+  position: absolute; left: 0; right: 0; height: 56px; border-radius: 12px;
+  background: rgba(216, 168, 78, .12); border: 1px solid rgba(216, 168, 78, .45);
+  transform: translateY(0); transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+  pointer-events: none;
+}
+.stg__tab {
+  position: relative; z-index: 1; display: flex; align-items: baseline; gap: 12px;
+  height: 56px; padding: 0 12px; border: 0; background: none; cursor: pointer;
+  text-align: left; color: var(--c-muted-dark); font: inherit;
+  transition: color .2s ease;
+}
+.stg__tab[aria-selected="true"] { color: var(--c-head-dark); }
+.stg__tab:hover { color: var(--c-head-dark); }
+.stg__tab:focus-visible { outline: 2px solid #38BDF8; outline-offset: 2px; border-radius: 12px; }
+.stg__num { font-family: var(--font-mono, monospace); font-size: .75rem; letter-spacing: .12em; color: #D8A84E; }
+.stg__name { font-size: 1rem; font-weight: 500; letter-spacing: -.01em; }
+
+.stg__panel { min-height: 300px; }
+.stg__eyebrow { font-family: var(--font-mono, monospace); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #D8A84E; }
+.stg__title { font-size: clamp(1.6rem, 2.4vw, 2.35rem); line-height: 1.1; letter-spacing: -.02em; margin: 14px 0 12px; color: var(--c-head-dark); }
+.stg__text { font-size: 1.0625rem; line-height: 1.6; color: var(--c-body-dark); max-width: 56ch; }
+.stg__cta { margin-top: 22px; }
+
+.stg__check { margin-top: 28px; padding: 22px; border-radius: 14px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .12); }
+.stg__check-k { font-family: var(--font-mono, monospace); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--c-muted-dark); }
+.stg__list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.stg__list li { display: flex; gap: 10px; align-items: flex-start; color: var(--c-body-dark); font-size: .9375rem; }
+.stg__tick { flex: 0 0 18px; width: 18px; height: 18px; margin-top: 2px; }
+.stg__tick path { fill: none; stroke: #38BDF8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* the stage ring: brand colours, fills 20% per stage */
+.stg__ring { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.stg__ring svg { width: 40px; height: 40px; transform: rotate(-90deg); }
+.stg__ring circle { fill: none; stroke-width: 3; }
+.stg__ring .track { stroke: rgba(255, 255, 255, .16); }
+.stg__ring .fill { stroke: #D8A84E; stroke-linecap: round; transition: stroke-dashoffset .6s cubic-bezier(.22, 1, .36, 1); }
+.stg__ring b { font-family: var(--font-mono, monospace); font-size: .72rem; letter-spacing: .12em; color: var(--c-head-dark); }
+
+@media (max-width: 900px) {
+  .stg { grid-template-columns: 1fr; gap: 24px; }
+  .stg__nav { flex-direction: row; padding: 0 0 10px; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+  .stg__nav::-webkit-scrollbar { display: none; }
+  .stg__nav::before, .stg__fill { display: none; }
+  .stg__pill { display: none; }
+  .stg__tab { height: 44px; padding: 0 14px; border: 1px solid rgba(255, 255, 255, .16); border-radius: 999px; white-space: nowrap; }
+  .stg__tab[aria-selected="true"] { border-color: rgba(216, 168, 78, .6); background: rgba(216, 168, 78, .12); }
+}
+
+/* 3. HERO RIBBONS + COUNT-UP STRIP --------------------------------------- */
+.ribbons { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.ribbon { position: absolute; width: 140%; height: 46%; left: -20%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(216, 168, 78, .18), transparent 70%);
+  filter: blur(28px); will-change: transform; animation: ribbon-drift 34s linear infinite; }
+.ribbon:nth-child(2) { top: 34%; animation-duration: 46s; animation-direction: reverse;
+  background: radial-gradient(closest-side, rgba(56, 189, 248, .14), transparent 70%); }
+.ribbon:nth-child(3) { top: 12%; animation-duration: 58s;
+  background: radial-gradient(closest-side, rgba(216, 168, 78, .10), transparent 72%); }
+@keyframes ribbon-drift { from { transform: translate3d(-4%, 0, 0) rotate(-2deg); } to { transform: translate3d(6%, 0, 0) rotate(2deg); } }
+
+.statstrip { display: flex; flex-wrap: wrap; gap: clamp(18px, 3vw, 44px); margin-top: 30px; }
+.statstrip__item { display: flex; flex-direction: column; gap: 2px; }
+.statstrip__num { font-size: clamp(1.5rem, 2.2vw, 2rem); letter-spacing: -.02em; color: var(--c-head-dark); font-weight: 500; }
+.statstrip__label { font-size: .8125rem; color: var(--c-body-dark); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon { animation: none; }
+  .stg__pill, .stg__fill, .stg__ring .fill { transition: none; }
+  html { scroll-behavior: auto; }
+}
+@media (max-width: 720px) {
+  .ribbon { animation-duration: 90s; filter: blur(20px); }
+  .statstrip { gap: 16px; }
+}
+
+/* --- stage animation slice (ported from the richer build, brand colours kept) --- */
+.stg__ring { position: relative; }
+.stg__ring::before { content: ""; position: absolute; inset: -9px; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(216,168,78,.55), rgba(56,189,248,.45), rgba(216,168,78,.10), rgba(216,168,78,.55));
+  filter: blur(9px); opacity: .5; animation: stgSpin 16s linear infinite; }
+.stg__ring svg { position: relative; z-index: 1; }
+@keyframes stgSpin { to { transform: rotate(360deg); } }
+.stg__pill { transition: transform .55s cubic-bezier(.34, 1.8, .5, 1); }
+.stg-ready .stg__panel [role="tabpanel"] { opacity: 0; transform: translate3d(0, 10px, 0); }
+.stg-ready .stg__panel [role="tabpanel"].is-in { opacity: 1; transform: none;
+  transition: opacity .38s cubic-bezier(.22,1,.36,1), transform .38s cubic-bezier(.22,1,.36,1); }
+.stg-ready .stg__list li { opacity: 0; transform: translate3d(0, 6px, 0); }
+.stg-ready .is-in .stg__list li { opacity: 1; transform: none; transition: opacity .32s ease, transform .32s ease; }
+.stg-ready .is-in .stg__list li:nth-child(1) { transition-delay: .05s; }
+.stg-ready .is-in .stg__list li:nth-child(2) { transition-delay: .13s; }
+.stg-ready .is-in .stg__list li:nth-child(3) { transition-delay: .21s; }
+@media (prefers-reduced-motion: reduce) {
+  .stg__ring::before { animation: none; }
+  .stg-ready .stg__panel [role="tabpanel"],
+  .stg-ready .stg__list li { opacity: 1; transform: none; }
+}
+
+/* decorative ledger numbers on dark bands were 2.8:1 */
+.band--deep .ledger-no b, .pods-hero .ledger-no b, .ledger-no b { color: #E0B45C; }
+
+/* inner-page dark surfaces: table headers and meta in brand gold were 2.4:1 */
+
+
+/* ledger numbers on light bands keep the darker gold */
+
+
+/* table headers and ledger numbers inherit the band colour instead of hard-coded gold,
+   which failed AA on dark surfaces (2.4:1) and on light ones (2.0:1) */
+table th { color: inherit; }
+.ledger-no b, .px-ledger .ledger-no b, .stg__ring b { color: inherit; }
+
+/* final: gold table headers and ledger numbers failed AA everywhere they sat */
+table th{color:inherit !important}
+.ledger-no b,.px-ledger .ledger-no b{color:inherit !important}
+
+
+/* table headers keep the surface colour; the five pages below still mix dark and
+   light zebra rows, so no single colour passes — see QA/summary.md */
+table th{color:inherit !important}
+
+/* source build's stage header has no intro line; ours carries the gates sentence */
+.ph-intro{margin:10px 0 0;font-size:.9375rem;color:inherit;opacity:.9}
+.ph-intro a{text-decoration:underline;text-underline-offset:3px}
+
+/* source build put an h1 in every stage slide; one h1 per page */
+.ph-stage h3{font-size:clamp(1.6rem,2.4vw,2.35rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 12px}
+
+/* ============ Round 6 — eight fixes ============ */
+
+/* 1. a hero title must never be stuck invisible */
+.hero h1, main > section:first-of-type h1 { opacity: 1 !important; transform: none !important; }
+
+/* 2. breathing room between sections */
+#pods-hero { padding-block: clamp(80px, 9vw, 128px); }
+.band, .cads { padding-block: max(clamp(56px, 6.5vw, 104px), 1px); }
+
+/* 3. stage rail: tabs left, panel right */
+.pods-hero { display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr);
+  grid-template-areas: "head head" "tabs stage"; column-gap: clamp(24px, 4vw, 64px); }
+.pods-hero .ph-head { grid-area: head; }
+.pods-hero #ph-tabs { grid-area: tabs; display: flex; flex-direction: column; align-items: stretch; gap: 2px;
+  position: relative; height: auto; padding: 0; }
+.pods-hero #ph-tabs button { width: 100%; text-align: left; justify-content: flex-start; }
+.pods-hero #ph-pill { left: 0; right: 0; width: auto; height: 0;
+  transition: transform .55s cubic-bezier(.34,1.8,.5,1), height .55s cubic-bezier(.34,1.8,.5,1); }
+.pods-hero #ph-stage { grid-area: stage; }
+@media (max-width: 900px) {
+  .pods-hero { grid-template-columns: 1fr; grid-template-areas: "head" "tabs" "stage"; }
+  .pods-hero #ph-tabs { flex-direction: row; overflow-x: auto; scrollbar-width: none; }
+  .pods-hero #ph-tabs::-webkit-scrollbar { display: none; }
+  .pods-hero #ph-tabs button { width: auto; white-space: nowrap; }
+}
+
+/* 4. pricing / scope cards: lighter surfaces, hairline accent, no heavy box */
+.card { border: 0; border-top: 1px solid rgba(255,255,255,.12);
+  background-image: radial-gradient(120% 80% at 100% 0, rgba(212,175,55,.07), transparent 60%); box-shadow: none; }
+.band--light .card, .band--light-2 .card, .band--paper .card, .band--light-warm .card {
+  border-top: 1px solid rgba(11,18,32,.16);
+  background-image: radial-gradient(120% 80% at 100% 0, rgba(212,175,55,.10), transparent 60%);
+}
+.card__list li { align-items: flex-start; }
+.card .link-arrow, .card .btn--ghost { transition: color .2s ease, border-color .2s ease; }
+.card .link-arrow:hover, .card .link-arrow:focus-visible { color: var(--gold); }
+
+/* 5. metric numbers stay flat on hover */
+.stat, .stat:hover, .stat:focus, .stat--index, .stat--index:hover {
+  background: none !important; box-shadow: none !important; border: 0 !important; transform: none !important; }
+.stat--index:hover .stat__num { filter: brightness(1.08); }
+
+/* 6. the semicircle motif, every second section, visible on both surfaces */
+main > section { position: relative; isolation: isolate; }
+main > section:nth-of-type(even)::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  width: min(120vw, 1500px); aspect-ratio: 2 / 1; left: 50%; bottom: -28%; transform: translateX(-50%);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  border: 1px solid rgba(212, 175, 55, .14); border-bottom: 0;
+  background: radial-gradient(closest-side, rgba(56,189,248,.06), transparent 72%);
+}
+.band--light:nth-of-type(even)::before, .band--paper:nth-of-type(even)::before,
+.band--light-2:nth-of-type(even)::before, .band--light-warm:nth-of-type(even)::before {
+  border-color: rgba(15, 23, 42, .08);
+  background: radial-gradient(closest-side, rgba(212, 175, 55, .10), transparent 72%);
+}
+
+/* 7. gold accent on heading emphasis */
+h1 em, h2 em, h3 em, .hero__title em { color: var(--gold, #D4AF37); font-style: italic; }
+h2 strong { color: var(--gold, #D4AF37); font-weight: inherit; }
+
+/* 8. logo: one wordmark, and the orbital dot on the ring */
+.brand { gap: 0 !important; align-items: center; position: relative; }
+.brand img { display: block; }
+.brand::after { content: ""; position: absolute; left: 17px; top: 17px; width: 6px; height: 6px;
+  border-radius: 50%; background: #fff; box-shadow: 0 0 6px 2px rgba(255,255,255,.9); pointer-events: none; }
+
+/* 3b. desktop rail: the widget's own pill is horizontal, so the active row carries the indicator */
+@media (min-width: 901px) {
+  .pods-hero #ph-pill { display: none; }
+  .pods-hero #ph-tabs button { border-radius: 12px; transition: background .35s ease, color .35s ease; }
+  .pods-hero #ph-tabs button[aria-selected="true"] {
+    background: #F7F5F0; color: #0B1220; font-weight: 600; }
+  .pods-hero #ph-tabs button:focus-visible { outline: 2px solid #38BDF8; outline-offset: 2px; }
+}
+@media (min-width: 901px) {
+  .pods-hero #ph-tabs button[aria-selected="true"],
+  .pods-hero #ph-tabs button.is-active,
+  .pods-hero #ph-tabs button.active,
+  .pods-hero #ph-tabs button.on {
+    background: #F7F5F0 !important; color: #0B1220 !important; font-weight: 600;
+  }
+}
+
+/* ============ Round 7 ============ */
+
+/* 1. the ported widget was built as a horizontal carousel; in the rail it collapsed to 12px */
+.pods-hero #ph-stage { width: 100% !important; max-width: none !important; min-width: 0 !important;
+  justify-self: stretch; overflow: visible !important; height: auto !important; padding: 0 !important; }
+.pods-hero .ph-slide { position: relative !important; inset: auto !important; width: 100% !important;
+  max-width: none !important; transform: none !important; left: auto !important; top: auto !important; }
+.pods-hero .ph-slide:not(.active) { display: none !important; }
+.pods-hero .ph-slide.active { display: block !important; animation: phStageIn .3s ease-out both; }
+@keyframes phStageIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.pods-hero .ph-slide .ph-card li { opacity: 1; transform: none; }
+.pods-hero #ph-tabs { min-height: 0; }
+
+/* 2. the thin wireframe arc behind the comparison table is gone */
+main > section:nth-of-type(even)::before { content: none !important; border: 0 !important; }
+
+/* 3. thick architectural band, every alternate section, dark and light */
+main > section:nth-of-type(odd) { position: relative; isolation: isolate; overflow: clip; }
+main > section:nth-of-type(odd)::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: min(2400px, 220vw); aspect-ratio: 1 / 1; left: 50%; top: 52%; transform: translateX(-50%);
+  border-radius: 50%; border: 96px solid rgba(49, 36, 92, .38);
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, .10);
+}
+.band--light:nth-of-type(odd)::after, .band--paper:nth-of-type(odd)::after,
+.band--light-2:nth-of-type(odd)::after, .band--light-warm:nth-of-type(odd)::after {
+  border-color: rgba(212, 175, 55, .09); box-shadow: inset 0 0 0 1px rgba(15, 23, 42, .04);
+}
+main > section:nth-of-type(odd) > * { position: relative; z-index: 1; }
+
+/* 4. hero copy can never sit at opacity 0 */
+.hero h1, .hero__sub, .hero__cta, .hero .eyebrow { opacity: 1 !important; transform: none !important; }
+
+/* ============ Round 8 ============ */
+
+/* 1. arc pinned to an edge, never the middle; alternates left / right down the page */
+main > section:nth-of-type(odd)::after {
+  width: min(1600px, 118vw); top: 50%; left: auto; right: auto; transform: translateY(-50%);
+}
+main > section:nth-of-type(4n+1)::after { left: calc(-1 * min(760px, 46vw)); right: auto; }
+main > section:nth-of-type(4n+3)::after { right: calc(-1 * min(760px, 46vw)); left: auto; }
+
+/* 2. stage: original slide-up swap */
+.pods-hero .ph-slide.active { animation: phSlideUp .4s cubic-bezier(.22, 1, .36, 1) both !important; }
+@keyframes phSlideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.pods-hero .ph-slide.leaving { animation: phSlideOut .4s cubic-bezier(.22, 1, .36, 1) both !important; }
+@keyframes phSlideOut { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-24px); } }
+@media (prefers-reduced-motion: reduce) {
+  .pods-hero .ph-slide.active, .pods-hero .ph-slide.leaving { animation: none !important; }
+}
+
+/* 2b. rail must never cut the fifth tab */
+.pods-hero, .pods-hero #ph-tabs { height: auto !important; max-height: none !important; overflow: visible !important; }
+.pods-hero #ph-tabs { padding-block: 8px; }
+.pods-hero #ph-tabs button { flex: 0 0 auto; }
+
+/* 3. the ambient hero glow layer had collapsed to 0px of height */
+.hero-panel { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; }
+.hero { position: relative; }
+
+/* ============ Round 9 ============ */
+
+/* A. hero title can never sit inside a closed mask */
+.hero .mask-reveal, .hero .mask-reveal:not(.is-revealed) {
+  opacity: 1 !important; transform: none !important; clip-path: none !important; }
+
+/* B. stage navigation back on top, horizontal, pill visible (as the original build) */
+.pods-hero { display: block !important; grid-template-columns: none !important; grid-template-areas: none !important; }
+.pods-hero #ph-tabs { flex-direction: row !important; align-items: center; gap: 6px;
+  overflow-x: auto !important; padding-block: 6px !important; margin: 14px 10px 0 !important; }
+.pods-hero #ph-tabs::-webkit-scrollbar { display: none; }
+.pods-hero #ph-tabs button { width: auto !important; white-space: nowrap; text-align: center; }
+.pods-hero #ph-pill { display: block !important; }
+.pods-hero #ph-tabs button[aria-selected="true"] { background: transparent !important; color: inherit !important; font-weight: inherit !important; }
+.pods-hero #ph-stage { width: 100% !important; max-width: none !important; }
+
+/* C. extra motion, all transform/opacity only */
+.hero .hero__title { animation: heroRise .7s cubic-bezier(.22,1,.36,1) both; }
+.hero .hero__sub { animation: heroRise .7s cubic-bezier(.22,1,.36,1) .1s both; }
+.hero .hero__cta { animation: heroRise .7s cubic-bezier(.22,1,.36,1) .18s both; }
+@keyframes heroRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.sec-head h2 { position: relative; }
+.sec-head h2::after { content: ""; position: absolute; left: 0; bottom: -10px; height: 2px; width: 0;
+  background: linear-gradient(90deg, #D4AF37, #38BDF8); transition: width .8s cubic-bezier(.22,1,.36,1); }
+.is-in .sec-head h2::after, [data-reveal].is-revealed .sec-head h2::after, section:hover .sec-head h2::after { width: 72px; }
+.card { transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s ease; }
+.card:hover { transform: translateY(-4px); border-top-color: rgba(212,175,55,.55); }
+.btn { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(212,175,55,.18); }
+.link-arrow { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px;
+  background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s ease, color .2s ease; }
+.link-arrow:hover { background-size: 100% 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero__title, .hero .hero__sub, .hero .hero__cta { animation: none !important; }
+  .card:hover, .btn:hover { transform: none !important; }
+}
+.pods-hero #ph-stage { max-width: 1200px !important; margin-inline: auto !important; padding-inline: 6px !important; }
+
+/* ============ Round 10 ============ */
+
+/* A. a headline is never hidden by a reveal system, at any moment after load */
+h1, h1 * { opacity: 1 !important; clip-path: none !important; transform: none !important;
+  visibility: visible !important; animation: none !important; }
+.hero .px-reveal, .hero .mask-reveal { opacity: 1 !important; clip-path: none !important; transform: none !important; }
+
+/* B. background architecture: grid, orbs, section rules */
+body::before { content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 72px 72px; mask-image: radial-gradient(120% 90% at 50% 0, #000 35%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 0, #000 35%, transparent 78%); }
+.hero::before { content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: 62vw; height: 62vw; max-width: 900px; max-height: 900px; right: -12vw; top: -18vw; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(56,189,248,.16), transparent 70%); filter: blur(20px);
+  animation: orbDrift 26s ease-in-out infinite alternate; }
+.hero::after { content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: 46vw; height: 46vw; max-width: 720px; max-height: 720px; left: -14vw; bottom: -22vw; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(212,175,55,.14), transparent 70%); filter: blur(24px);
+  animation: orbDrift 34s ease-in-out infinite alternate-reverse; }
+@keyframes orbDrift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(3vw,2vw,0) scale(1.08); } }
+.hero > * { position: relative; z-index: 1; }
+
+.band + .band, main > section + section { position: relative; }
+main > section + section::before { content: ""; position: absolute; top: 0; left: 8%; right: 8%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,.35), rgba(56,189,248,.28), transparent); }
+
+/* C. a few more entrance details */
+.ph-card, .stg__check { animation: cardIn .5s cubic-bezier(.22,1,.36,1) both; }
+@keyframes cardIn { from { opacity: 0; transform: translateY(16px) scale(.99); } to { opacity: 1; transform: none; } }
+.qm-poster, .ad { transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease; }
+.qm-poster:hover, .ad:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero::after, .ph-card, .stg__check { animation: none !important; }
+  .qm-poster:hover, .ad:hover { transform: none !important; }
+}
+
+/* ============ Round 11 — three sections rebuilt ============ */
+
+/* 1. FIVE STAGES ---------------------------------------------------------- */
+.pods-hero #ph-tabs {
+  display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px; width: min(1200px, calc(100% - 32px)); margin: 18px auto 0 !important;
+  padding: 6px !important; overflow: hidden !important; border-radius: 999px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10);
+}
+.pods-hero #ph-tabs::-webkit-scrollbar { display: none; height: 0; }
+.pods-hero #ph-tabs button {
+  width: 100% !important; min-width: 0; padding: 12px 8px !important; border: 0; background: none;
+  color: rgba(255,255,255,.72); font-size: .9375rem; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; border-radius: 999px; transition: color .25s ease;
+}
+.pods-hero #ph-tabs button[aria-selected="true"] { color: #0B1220; font-weight: 600; }
+.pods-hero #ph-pill { background: #F7F5F0 !important; border-radius: 999px; z-index: 0; }
+.pods-hero #ph-tabs button { position: relative; z-index: 1; }
+
+.pods-hero .ph-slide {
+  display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  gap: clamp(28px, 5vw, 72px); align-items: center;
+  width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding-block: clamp(36px, 5vw, 64px);
+}
+.pods-hero .ph-slide:not(.active) { display: none !important; }
+.pods-hero .ph-copy { position: relative; z-index: 2; min-width: 0; }
+.pods-hero .ph-copy > * { margin: 0 0 18px; }
+.pods-hero .ph-copy p { max-width: 60ch; }
+.pods-hero .ph-card {
+  position: relative; z-index: 3; background: #FFFFFF; color: #0B1220;
+  border-radius: 22px; padding: 28px; box-shadow: 0 24px 60px rgba(0,0,0,.32);
+}
+.pods-hero .ph-card :is(h3, h4, li, p, small) { color: #0B1220; }
+.pods-hero .ph-card ul { margin: 0; padding: 0; }
+.pods-hero .ph-card li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.pods-hero .ph-card li svg, .pods-hero .ph-card li i { flex: 0 0 20px; }
+.pods-hero .ph-rin, .pods-hero .ph-demo { position: absolute; right: 120px; top: 50%; translate: 0 -50%; z-index: 1; }
+@media (max-width: 900px) {
+  .pods-hero #ph-tabs { grid-template-columns: repeat(5, minmax(84px, 1fr)); overflow-x: auto !important; }
+  .pods-hero .ph-slide { grid-template-columns: 1fr; }
+  .pods-hero .ph-rin, .pods-hero .ph-demo { position: relative; right: auto; top: auto; translate: none; margin: 0 auto 18px; }
+}
+
+/* 2. POD MODEL — decoration off ------------------------------------------- */
+.pod-cell::before, .pod-lab__board::after { content: none !important; animation: none !important; }
+.pod-lab, .band.pod-lab { background-image: none !important; }
+.pod-cell { background: rgba(255,255,255,.03) !important; }
+.pod-lab__board { border-radius: 18px !important; background: rgba(255,255,255,.06) !important; }
+.pod-lab::after, .pod-lab::before { content: none !important; }
+
+/* 3. PRICING + SCOPE — editorial, no boxes -------------------------------- */
+#services .grid.grid--2 { display: block; }
+#services .grid.grid--2 > .card {
+  border: 0; border-top: 1px solid rgba(212,175,55,.28); background: none; box-shadow: none;
+  padding: 26px 0 0; margin-bottom: 40px; border-radius: 0;
+}
+#services .grid.grid--2 > .card::before { content: none; }
+#services .card__title {
+  font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: #E0B45C;
+  margin: 0 0 22px;
+}
+#services .card__list { list-style: none; margin: 0; padding: 0; display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0 clamp(20px, 4vw, 56px); }
+#services .card__list li {
+  padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+  font-size: 1rem; line-height: 1.45; color: inherit;
+}
+#services .card__list li:last-child { border-bottom: 0; }
+#services .card__foot { margin-top: 18px; }
+#services .card__foot .link-arrow, #services .card__foot .btn { color: #E0B45C; }
+#services .card__foot .link-arrow:hover, #services .card__foot .btn:hover { color: #fff; }
+#services .micro { color: rgba(255,255,255,.66); max-width: 62ch; margin-top: 6px; }
+#services::before, #services::after { content: none !important; }
+@media (max-width: 720px) { #services .card__list { grid-template-columns: 1fr; } }
+
+/* 4. one signature animation per page type -------------------------------- */
+.pg [data-reveal], .pg [data-stagger] > * { animation-duration: .7s; }
+.pg-hero .sec-head > * { animation: pgRise .7s cubic-bezier(.22,1,.36,1) both; }
+.pg-pricing .card__list li { animation: pgLine .6s cubic-bezier(.22,1,.36,1) both; }
+.pg-pricing .card__list li:nth-child(2) { animation-delay: .08s; }
+.pg-pricing .card__list li:nth-child(3) { animation-delay: .16s; }
+.pg-pod .sec-head h2 { animation: pgMask .8s cubic-bezier(.22,1,.36,1) both; }
+.pg-compare tbody tr { animation: pgSlide .5s cubic-bezier(.22,1,.36,1) both; }
+.pg-compare tbody tr:nth-child(2n) { animation-delay: .06s; }
+.pg-industry .card, .pg-industry .qm-poster { animation: pgScale .6s cubic-bezier(.22,1,.36,1) both; }
+.pg-glossary dt, .pg-glossary strong { transition: color .25s ease, letter-spacing .25s ease; }
+.pg-glossary dt:hover, .pg-glossary strong:hover { color: #E0B45C; letter-spacing: .01em; }
+.pg-auth .card { animation: pgBlur .7s cubic-bezier(.22,1,.36,1) both; }
+@keyframes pgRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes pgLine { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+@keyframes pgMask { from { clip-path: inset(0 0 100% 0); transform: translateY(10px); } to { clip-path: none; transform: none; } }
+@keyframes pgSlide { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+@keyframes pgScale { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes pgBlur { from { opacity: 0; filter: blur(6px); } to { opacity: 1; filter: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .pg-hero .sec-head > *, .pg-pricing .card__list li, .pg-pod .sec-head h2,
+  .pg-compare tbody tr, .pg-industry .card, .pg-industry .qm-poster, .pg-auth .card { animation: none !important; }
+}
+@media (max-width: 900px) {
+  .pods-hero #ph-tabs { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; overflow: hidden !important;
+    width: calc(100% - 24px); gap: 4px; }
+  .pods-hero #ph-tabs button { font-size: .8rem !important; padding: 10px 4px !important; letter-spacing: -.01em; }
+}
+
+/* ============ Round 12 — clean canvas, restored components, spacing system ============ */
+
+/* A. remove oversized background decoration (grid, orbs, arcs, seams) */
+body::before, .hero::before, .hero::after,
+main > section:nth-of-type(odd)::after, main > section + section::before { content: none !important; display: none !important; }
+#services::before, #services::after { content: none !important; }
+
+/* B. pod model: original 4-column slide design restored, decoration stays off */
+.pod-cell::before { content: none !important; }
+.pod-lab__board { border-radius: 26px !important; background: rgba(255,255,255,.09) !important; }
+.pod-cell { background: none !important; }
+
+/* C. pricing: real cards again, not a text table */
+#services .grid.grid--2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px); }
+#services .grid.grid--2 > .card {
+  border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 26px 26px 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 18px 40px rgba(0,0,0,.28);
+  margin: 0;
+}
+#services .card__title { font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase;
+  color: #E0B45C; margin: 0 0 18px; }
+#services .card__list { display: block; }
+#services .card__list li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+#services .card__list li:last-child { border-bottom: 0; }
+#services .card__foot { margin-top: 16px; }
+#services .card__foot .link-arrow, #services .card__foot .btn { color: #E0B45C; }
+#services .card__foot .link-arrow:hover, #services .card__foot .btn:hover { color: #fff; }
+#services .micro { color: rgba(255,255,255,.68); }
+@media (max-width: 860px) { #services .grid.grid--2 { grid-template-columns: 1fr; } }
+
+/* D. one spacing scale for the whole site */
+:root { --sec-pad: clamp(52px, 6vw, 92px); --head-gap: clamp(14px, 1.6vw, 22px); }
+main > section { padding-block: var(--sec-pad) !important; }
+.hero { padding-block: clamp(44px, 5vw, 74px) clamp(52px, 6vw, 92px) !important; }
+.sec-head { margin-bottom: clamp(22px, 3vw, 38px) !important; }
+.sec-head > * + *, .sec-head .stack > * + * { margin-top: var(--head-gap); }
+.sec-head h2 { margin: 0; }
+.sec-head .lead { margin: 0; }
+.pod-lab__head, .calc-heading-row { margin-bottom: clamp(20px, 2.6vw, 34px) !important; }
+#pods-hero { padding-block: var(--sec-pad) !important; }
+.cads { padding-block: var(--sec-pad) !important; }
+@media (max-width: 720px) { main > section { padding-block: clamp(40px, 9vw, 60px) !important; } }
+
+/* Phase A — accessibility hardening */
+:where(a, button, [role="tab"], summary, input, select, textarea):focus-visible {
+  outline: 2px solid #38BDF8; outline-offset: 3px; border-radius: 6px; }
+body[data-surface="dark"] table thead th { color: #F4F6FA !important; }
+body[data-surface="dark"] table thead { background: rgba(255,255,255,.06); }
+@media (pointer: coarse) {
+  .btn, .nav__link, #ph-tabs button, .card__foot a { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* Phase A — sticky mobile conversion bar */
+.mcta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; display: none;
+  gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(7,11,20,.92); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,.10); }
+.mcta .btn { flex: 1 1 0; justify-content: center; }
+@media (max-width: 720px) { .mcta { display: flex; } body { padding-bottom: 68px; } }
+/* zebra tables: only the header row takes the light colour; row headers follow their row */
+body[data-surface="dark"] table tbody th { color: inherit !important; }
+/* header cell ink on a dark surface: light text on the 6% white header row.
+   The previous pair painted the header strip #EDEFF3 but the background
+   declaration lost to the table's own background, leaving #0B1220 ink on
+   rgb(14,14,19) — 1.03:1, i.e. invisible (compare, security, contracts,
+   onboarding, products). Keep the strip dark and the ink light. */
+html body[data-surface="dark"] table thead { background: rgba(255,255,255,.06) !important; }
+html body[data-surface="dark"] table thead th { background: transparent !important; color: #F4F6FA !important; -webkit-text-fill-color: #F4F6FA !important; }
+
+/* Readability floor — table headers were rendering at 9px and micro labels at 10px.
+   One rule, applied at the end of the cascade, keeps inner-page tables legible. */
+html body table thead th, html body .table thead th { font-size: 11px; }
+html body .micro { font-size: 12px; }
+html body .reg-table thead th { font-size: 11px; }
+html body .reg-table td, html body .reg-table th { line-height: 1.45; }

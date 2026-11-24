@@ -1,0 +1,48 @@
+/* Home page imagery. Every image is pre-cropped to its slot ratio (assets/img/home-fit),
+   so all frames in a group are the same size at every width. */
+.hfit{position:relative;margin:0;overflow:hidden;background:#0e1119;flex:none}
+.hfit > img{position:static;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:none;opacity:1;transform:none}
+.hfit--pod{aspect-ratio:4/3}
+.hfit--track{aspect-ratio:16/10}
+.hfit--sample{aspect-ratio:1/1;border-radius:12px}
+.hfit--price{aspect-ratio:16/9;border-radius:12px}
+.hfit--head{aspect-ratio:4/3;border-radius:18px;border:1px solid rgba(255,255,255,.12)}
+.band--light-2 .hfit--head{background:#fff;border-color:rgba(11,18,32,.12)}
+.band--deep .hfit--head{background:#f7f5f1}
+
+/* pod model: image on top, number and copy below */
+.pod-cell{padding:0;min-height:0}
+.pod-cell > .hfit{width:100%;border-bottom:1px solid rgba(255,255,255,.09)}
+.pod-cell__num{margin:26px 28px 20px;font-size:clamp(2.8rem,3.4vw,3.6rem)}
+.pod-cell__copy{flex:1;grid-template-rows:auto auto 1fr auto;align-content:stretch;padding:0 28px 30px}
+
+/* capability tracks: image on top, label panel below */
+.qm-poster{padding:0;min-height:0}
+.qm-poster::after{content:none}
+.qm-poster > .hfit{width:100%}
+.qm-poster__copy{display:flex;flex-direction:column;flex:1;padding:18px 20px 20px;border-top:1px solid rgba(255,255,255,.1)}
+.qm-poster__k{margin-bottom:0}
+.qm-poster strong{margin-top:12px}
+
+/* work samples: claim, square image, action */
+.ad{display:flex;flex-direction:column;gap:16px;aspect-ratio:auto;padding:18px;background:#0e1016}
+.ad::after{content:none}
+.ad__head{flex:1}
+.ad__kicker{margin:0}
+.ad .hfit > img{position:static;filter:none}
+.ad:hover .hfit > img{transform:scale(1.03)}
+
+/* section heads with a picture on the right */
+.head-media{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:24px clamp(32px,5vw,80px);align-items:center;margin-bottom:clamp(28px,3vw,44px)}
+.head-media > .calc-heading-row{flex-direction:column;align-items:flex-start;margin-bottom:0!important}
+.head-media > .sec-head{grid-template-columns:minmax(0,1fr);margin:0!important}
+
+@media (max-width:900px){
+  .head-media{grid-template-columns:minmax(0,1fr)}
+  .hfit--head{max-width:520px;width:100%}
+}
+@media (max-width:640px){
+  .pod-cell__num{margin:22px 24px 16px}
+  .pod-cell__copy{padding:0 24px 26px}
+}
+@media (prefers-reduced-motion:reduce){.ad:hover .hfit > img{transform:none}}

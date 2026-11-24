@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://quantocos.com/capabilities/strategy.html#webpage",
+      "url": "https://quantocos.com/capabilities/strategy.html",
+      "name": "Strategy and consulting catalogue — brand, GTM, pricing, org design | Quantocos",
+      "description": "The strategy and consulting catalogue covers brand and go-to-market strategy, positioning, market research, pricing, sales enablement, marketing stack audits, IT and AI roadmaps, operating model design and executive advisory.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/capabilities/strategy.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/capabilities/strategy.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is in the strategy and consulting catalogue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Twelve service lines: brand and go-to-market strategy, positioning and messaging, market and competitor research, pricing and packaging, sales playbooks, content strategy, marketing stack audits, IT and AI roadmaps, digital transformation assessment, operating model and org design, workshop facilitation and executive advisory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which pod includes strategy work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only the Strategy Pod, also called the Growth Pod, at $9,000/month for 360 credits. It is the tier that contains all three catalogues: strategy, creative and digital marketing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this consulting or an agency retainer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a subscription pod that contains consulting and production. The same team that writes the positioning builds the campaign that expresses it, which is what makes the strategy accountable rather than advisory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you do IT and AI roadmaps as well as marketing strategy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The catalogue includes IT and AI roadmaps, digital transformation assessment and operating model design, alongside conventional brand and go-to-market work."
+          }
+        }
+      ]
+    }
+  ]
+}

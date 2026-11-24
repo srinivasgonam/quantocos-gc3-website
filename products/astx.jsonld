@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quantocos.com/products/astx.html#webpage",
+      "url": "https://quantocos.com/products/astx.html",
+      "name": "ASTX — proctored assessment and systems thinking | Quantocos",
+      "description": "ASTX, Advanced Systems Thinking, is Quantocos's in-development assessment platform: proctored examinations, interactive scenarios, simulation-based testing and credits earned for verified skill.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/products/astx.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/products/astx.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is ASTX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ASTX, Advanced Systems Thinking, is an assessment platform, in development. It combines proctored examinations with interactive scenarios and simulation-based assessment, and awards credits for skills that have been verified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why assess systems thinking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the work that remains for people once agents handle the routine is judgement about systems — what to build, what to stop, what a change will break. That is assessable, and almost nobody assesses it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ASTX connect to learning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The LXP delivers learning through the E2E framework; ASTX proves whether it landed; HPCF records the credits and shows them on a guild board. The three are one loop."
+          }
+        }
+      ]
+    }
+  ]
+}

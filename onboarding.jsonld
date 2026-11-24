@@ -1,0 +1,158 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://quantocos.com/onboarding.html#webpage",
+      "url": "https://quantocos.com/onboarding.html",
+      "name": "Onboarding: the first 90 days | Quantocos Global Systems LLP",
+      "description": "Quantocos onboarding in three phases: days 1-30 access and ingestion, days 31-60 the first delivery cycle, days 61-90 steady state. Five working days to the first output, one named manager, no lock-in.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/onboarding.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/onboarding.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens on day one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A kick-off call with your named manager. The first-quarter calendar is agreed in that call, access is arranged the same week, and the first brief is opened with a credit estimate before any work starts. There is no discovery phase to sit through first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly is the first output delivered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Five working days after integration. Integration means access to your tools and the brand material the pod works from. The calendar is agreed before that clock starts, so the first output is not a surprise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who do I deal with during onboarding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One named manager, the same person for the life of the engagement. They own the calendar, the brief and the review gate. There is no account team between you and the pod, and no hand-off to a delivery layer once the contract is signed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you need from us to start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four things: the brand assets, access to the tools you already work in, the name of the person who approves output, and a first brief. The brief can be rough. A list of what is slipping is enough to open one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the first month does not work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You stop at the month boundary. There is no lock-in, no notice period beyond the month, and no termination fee. The credit ledger for the month is yours, which also means you can see exactly what the money bought."
+          }
+        }
+      ]
+    }
+  ]
+}

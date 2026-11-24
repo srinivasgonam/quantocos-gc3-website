@@ -1,0 +1,158 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://quantocos.com/compare.html#webpage",
+      "url": "https://quantocos.com/compare.html",
+      "name": "Pod vs freelancer vs agency vs offshore GCC | Quantocos Global Systems LLP",
+      "description": "Compare a GCA3 pod with a freelancer, an agency and an offshore GCC: cost, time to first output, management load, tools, continuity, security and the hidden costs.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/compare.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/compare.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a pod cheaper than an agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For recurring work, usually yes. A Creative Pod is $3,000 a month for 120 credits, and a Digital Pod is $6,000 for 240 credits. An agency retainer for the same disciplines typically starts at $5,000–$20,000 a month, before media or production costs. A pod is not cheaper for a one-off project that fits inside a single quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a pod the same as an offshore GCC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A global capability centre is usually a captive team the client employs or contracts directly, with the client carrying recruitment, management and utilisation risk. A GCA3 pod is a subscription: the team, the tools, the manager, the review gate and the credit pool are all included in one monthly figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we start with one small piece of work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The first month can be a single catalogue brief inside the pod's credit allowance. There is no setup fee, and the pod is month to month after the minimum term stated on the pod page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to unused credits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credits are a pool for the month and do not roll over. The allowance is agreed before the month starts, and the portal shows what has been spent and what is left."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is a pod the wrong choice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When you need a one-off regulated opinion, a single specialist for a few hours, or a 50-person transformation you intend to employ. In those cases a freelancer, a professional firm or a captive team is the honest answer."
+          }
+        }
+      ]
+    }
+  ]
+}

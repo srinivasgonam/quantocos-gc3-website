@@ -1,0 +1,166 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://quantocos.com/solutions/digital-pod.html#webpage",
+      "url": "https://quantocos.com/solutions/digital-pod.html",
+      "name": "Digital Pod — $6,000/month creative plus digital marketing | Quantocos",
+      "description": "The Digital Pod is a $6,000/month subscription team of one manager, four specialists and four AI agents covering creative production and digital marketing: SEO, AEO, paid media, landing pages and analytics. 240 credits/month.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/solutions/digital-pod.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/solutions/digital-pod.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does the Digital Pod cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Digital Pod costs $6,000/month and includes 240 credits, which is twice the Creative Pod's pool. It contains the Creative and digital marketing catalogues, so credits can be spent on either production or performance work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the Creative Pod and the Digital Pod?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Creative Pod is production only: content, design, copy and video. The Digital Pod adds digital marketing — SEO, answer-engine optimisation, paid media, landing pages, analytics and lifecycle email — and doubles the team and the credit pool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Digital Pod replace a marketing agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most mid-market businesses, yes: it replaces the creative retainer and the media retainer with one pod, one manager and one dashboard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is answer-engine optimisation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AEO and GEO work is the practice of making a business legible to answer engines and generative engines — ChatGPT, Perplexity, Google AI Overviews — so it is quoted or cited when someone asks a question in that market. The Digital Pod includes it alongside conventional SEO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we move up or down between pods?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The pods are additive: the Digital Pod includes Creative, and the Strategy Pod includes both. Most teams start with one pod, run a quarter, then move up or add a custom pod alongside it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which currencies and time zones do you work in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The pod works across US, UK, UAE, ANZ and EU time zones. Billing is in US dollars."
+          }
+        }
+      ]
+    }
+  ]
+}

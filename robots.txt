@@ -1,0 +1,71 @@
+# Quantocos Global Systems LLP — GC³ capability centre
+# Answer engines and generative engines are explicitly welcome; content is
+# published to be cited. Attribution is required, training on client data is not.
+
+User-agent: *
+Allow: /
+Disallow: /portal/
+Disallow: /admin/
+Disallow: /*.backup.html$
+Disallow: /*.round3.backup.html$
+Disallow: /check_site.py
+Disallow: /build.py
+Disallow: /site-facts.json
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+Sitemap: https://quantocos.com/sitemap.xml
+# Generative-engine index: https://quantocos.com/llms.txt
+# Per-page machine summary: https://quantocos.com/<page>.jsonld

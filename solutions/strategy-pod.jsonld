@@ -1,0 +1,166 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://quantocos.com/solutions/strategy-pod.html#webpage",
+      "url": "https://quantocos.com/solutions/strategy-pod.html",
+      "name": "Strategy Pod (Growth Pod) — $9,000/month strategy plus execution | Quantocos",
+      "description": "The Strategy Pod, also called the Growth Pod, is a $9,000/month subscription team of one manager, six specialists and six AI agents covering strategy, creative and digital marketing together. 360 credits/month, no add-on fees.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/solutions/strategy-pod.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/solutions/strategy-pod.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does the Strategy Pod cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Strategy Pod costs $9,000/month and includes 360 credits. It contains the strategy, creative and digital marketing catalogues, so the same pod that writes the positioning also produces the campaign that follows it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Strategy Pod the same as the Growth Pod?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tier is called the Strategy Pod and is also referred to as the Growth Pod; both names describe the same $9,000/month pod containing all three catalogues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it compare with a fractional CMO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fractional CMO retainer typically runs $10,000–$12,000/month, with most engagements between $8,000 and $15,000, and buys senior thinking without a production team. The Strategy Pod costs $9,000 and includes strategy, creative and digital execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the strategy work actually produce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Positioning and messaging architecture, market and competitor research, pricing and packaging, sales playbooks, content strategy, a marketing stack audit, IT and AI roadmaps, and an operating model where one is needed — delivered as documents the same pod then executes against."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need the creative and digital work too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The catalogues are additive rather than bundled: a client can run strategy alone and spend credits only there, or move the same credits into execution as the priorities change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the minimum commitment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The three subscription pods are month to month. Custom pods and the real-estate pod REMAU carry a three-month minimum because of the depth of the initial setup."
+          }
+        }
+      ]
+    }
+  ]
+}

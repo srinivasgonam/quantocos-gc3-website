@@ -1,0 +1,280 @@
+# Quantocos Global Systems LLP (GC³)
+
+> Capability pods of people and AI agents, sold as a monthly subscription and billed in credits.
+
+## Pricing (published)
+- 1 credit = 1 billable hour = $25
+- Creative pod: $3,000 / month / 120 credits
+- Digital pod: $6,000 / month / 240 credits
+- Strategy pod: $9,000 / month / 360 credits
+- Unused credits do not carry into the next month
+- Onboarding, brief clarification, asset handover and the monthly review are never charged
+
+## Service catalogue — 127 services in 50 categories
+Source: GC3 Service SLA, Credit & Value Matrix v0.2. Machine-readable copy: /assets/data/services.json
+
+### 3D
+- 3D product model (Interactive (AR/VR/3D), 1 hero model) — 17.25 credits / $431.25
+- 3D product render set (Interactive (AR/VR/3D), 5 stills) — 8.75 credits / $218.75
+- 3D product animation (Interactive (AR/VR/3D), 15–30 sec) — 23 credits / $575
+
+### AEO / GEO
+- AI-answer visibility audit (Growth, 1 brand) — 7.25 credits / $181.25
+- AEO implementation (Growth, ≤20 pages) — 11.5 credits / $287.5
+
+### AI Agents
+- AI chatbot (FAQ / RAG) (AI Automations, ≤50 documents) — 28.75 credits / $718.75
+- AI voice agent (AI Automations, 1 agent) — 43.25 credits / $1081.25
+- Custom AI agent (AI Automations, 1 role) — 43.25 credits / $1081.25
+- AI content pipeline (AI Automations, 1 pipeline) — 17.25 credits / $431.25
+
+### AR
+- Social AR filter (Interactive (AR/VR/3D), 1 filter) — 17.25 credits / $431.25
+- WebAR product experience (Interactive (AR/VR/3D), 1 experience) — 43.25 credits / $1081.25
+
+### Ad-hoc
+- Unscoped task (time-boxed) (Pod Ops, Per hour) — 1 credits / $25
+
+### Advertising
+- Ad creative set (Creative, 5 variants × 3 sizes) — 7.25 credits / $181.25
+
+### Advisory
+- Workshop facilitation (Strategy, Half day) — 8.75 credits / $218.75
+- Executive strategy session (Strategy, 90 min) — 3 credits / $75
+
+### Analytics
+- GA4 + GTM setup (Growth, 1 site) — 8.75 credits / $218.75
+- Performance dashboard (Growth, 1 dashboard) — 8.75 credits / $218.75
+- Monthly performance report (Growth, 1 report) — 4.25 credits / $106.25
+
+### Brand
+- Brand strategy & positioning (Strategy, 1 brand) — 28.75 credits / $718.75
+- Messaging framework (Strategy, 1 brand) — 11.5 credits / $287.5
+
+### Brand & Identity
+- Logo design (Creative, Project) — 17.25 credits / $431.25
+- Brand guidelines (Creative, 20–30 pages) — 28.75 credits / $718.75
+- Brand kit & template system (Creative, 10 templates) — 21.5 credits / $537.5
+
+### Business Support
+- IT helpdesk (remote L1) (Back Office, Per month, ≤25 users) — 21.5 credits / $537.5
+- Bookkeeping support (Back Office, Per month) — 14.5 credits / $362.5
+- HR ops admin (Back Office, Per month) — 14.5 credits / $362.5
+- Customer support handling (Back Office, Per 100 tickets) — 18 credits / $450
+- Data entry / cleanup (Back Office, Per 1,000 records) — 5.75 credits / $143.75
+
+### Commercial
+- Pricing & packaging strategy (Strategy, 1 offer) — 17.25 credits / $431.25
+- Sales process & playbook (Strategy, 1 playbook) — 17.25 credits / $431.25
+- Pitch / investor deck (Strategy, 15 slides) — 21.5 credits / $537.5
+- Business case / decision memo (Strategy, 1 memo) — 8.75 credits / $218.75
+
+### Conversion
+- Landing page (design + copy + build) (Growth, 1 page) — 17.25 credits / $431.25
+- CRO audit + A/B test setup (Growth, 1 funnel) — 7.25 credits / $181.25
+
+### Copy
+- Email newsletter (Creative, 1 issue) — 4.25 credits / $106.25
+- Blog / article (Creative, 1,000–1,500 words) — 4.25 credits / $106.25
+- Website / landing page copy (Creative, 1 page) — 3.5 credits / $87.5
+
+### CorpComm
+- Internal newsletter / announcement (Creative, 1 issue) — 4.25 credits / $106.25
+- Internal communications strategy (Strategy, 1 plan) — 14.5 credits / $362.5
+
+### Data
+- Reporting automation (AI Automations, 1 report / dashboard) — 11.5 credits / $287.5
+- Document processing automation (AI Automations, 1 doc type) — 17.25 credits / $431.25
+
+### Delivery
+- Asset handover & file packaging (Pod Ops, Per project) — included
+
+### Design
+- Infographic (Creative, 1 piece) — 4.25 credits / $106.25
+- Brochure / flyer (print) (Creative, ≤4 pages) — 7.25 credits / $181.25
+- Event collateral kit (Creative, 5–8 items) — 11.5 credits / $287.5
+- AI product visuals (Creative, 5 images) — 5.75 credits / $143.75
+- Asset resize / adaptation (Creative, Up to 5 sizes) — 1.5 credits / $37.5
+
+### Diagnostics
+- Marketing / business audit (Strategy, 1 business) — 14.5 credits / $362.5
+
+### Discovery
+- Automation discovery & process audit (AI Automations, 1 department) — 8.75 credits / $218.75
+
+### E-commerce
+- Marketplace listing optimisation (Growth, 10 SKUs) — 5.75 credits / $143.75
+
+### Enablement
+- SOP & automation documentation (AI Automations, 1 system) — 5.75 credits / $143.75
+- Team AI enablement training (AI Automations, 2 hrs + materials) — 7.25 credits / $181.25
+
+### Immersive
+- 360° virtual tour (Interactive (AR/VR/3D), 1 space) — 17.25 credits / $431.25
+- Real-estate visualisation (Interactive (AR/VR/3D), 5 renders) — 28.75 credits / $718.75
+
+### Influencer
+- Influencer / UGC brief & shortlist (Growth, 1 campaign) — 5.75 credits / $143.75
+
+### Integration
+- API integration (AI Automations, 2 systems) — 14.5 credits / $362.5
+
+### Lead Gen
+- Lead magnet (Growth, 10–15 pages) — 11.5 credits / $287.5
+
+### Lifecycle
+- Email nurture sequence (Growth, 5 emails) — 8.75 credits / $218.75
+
+### Management Consulting
+- Operating model / org design (Strategy, 1 function) — 23 credits / $575
+
+### Meetings
+- Stakeholder meeting (Pod Ops, Per hour) — 1 credits / $25
+
+### Messaging
+- Email / WhatsApp automation (AI Automations, ≤5 flows) — 11.5 credits / $287.5
+
+### Onboarding
+- Client onboarding & brand ingestion (Pod Ops, One-time) — included
+- Brief clarification cycle (Pod Ops, Per request) — included
+
+### Operations
+- Monitoring & maintenance (AI Automations, Per 10 workflows / month) — 7.25 credits / $181.25
+
+### Ops Control
+- PMO / project control (Back Office, Per month) — 28.75 credits / $718.75
+- Ops KPI dashboard (Back Office, 1 dashboard) — 11.5 credits / $287.5
+- SOP documentation (Back Office, 1 process) — 4.25 credits / $106.25
+- Vendor management (Back Office, Per month) — 11.5 credits / $287.5
+- Quality / process audit (Back Office, 1 process area) — 8.75 credits / $218.75
+
+### Paid Media
+- Google Ads campaign setup (Growth, 1 campaign) — 8.75 credits / $218.75
+- Meta Ads campaign setup (Growth, 1 campaign) — 7.25 credits / $181.25
+- LinkedIn Ads campaign setup (Growth, 1 campaign) — 7.25 credits / $181.25
+- Paid media management (Growth, Per platform / week) — 3.5 credits / $87.5
+
+### Planning
+- Go-to-market plan (Strategy, 1 offer) — 28.75 credits / $718.75
+- 90-day marketing roadmap (Strategy, 1 plan) — 11.5 credits / $287.5
+- Content strategy & editorial calendar (Strategy, 1 quarter) — 11.5 credits / $287.5
+
+### Presentations
+- New presentation deck (Creative, 10 slides) — 8.75 credits / $218.75
+- Deck redesign from existing (Creative, 10 slides) — 5.75 credits / $143.75
+
+### Prototype
+- Game-engine prototype / POC (Interactive (AR/VR/3D), 1 prototype) — 86.5 credits / $2162.5
+
+### R&D
+- Product / market R&D sprint (Back Office, 2 weeks) — 43.25 credits / $1081.25
+- Technical feasibility study (Back Office, 1 concept) — 17.25 credits / $431.25
+- Software prototype / POC (Back Office, 1 prototype) — 57.5 credits / $1437.5
+- Competitive product teardown (Back Office, ≤3 products) — 11.5 credits / $287.5
+
+### Reporting
+- Monthly pod review (Pod Ops, Per month) — included
+
+### Research
+- Competitor growth teardown (Growth, ≤5 competitors) — 7.25 credits / $181.25
+- Market research report (Strategy, 1 market) — 23 credits / $575
+- Competitive landscape analysis (Strategy, ≤8 competitors) — 14.5 credits / $362.5
+- ICP & persona development (Strategy, ≤3 personas) — 8.75 credits / $218.75
+
+### Revenue Ops
+- Automated lead-gen machine (AI Automations, 1 pipeline) — 28.75 credits / $718.75
+- CRM setup (AI Automations, 1 CRM) — 17.25 credits / $431.25
+- CRM migration (AI Automations, ≤10k records) — 17.25 credits / $431.25
+
+### SEO
+- Technical SEO audit (Growth, 1 site ≤200 pages) — 11.5 credits / $287.5
+- Keyword research & cluster map (Growth, ≤200 keywords) — 7.25 credits / $181.25
+- On-page optimisation (Growth, 1 page) — 2.25 credits / $56.25
+- SEO article (Growth, 1,500 words) — 5.75 credits / $143.75
+
+### SOC & Security
+- Security posture assessment (Back Office, ≤50 users) — 17.25 credits / $431.25
+- Vulnerability scan & report (Back Office, ≤50 assets) — 5.75 credits / $143.75
+- SOC monitoring & alert triage (Back Office, Per month, ≤50 endpoints) — 43.25 credits / $1081.25
+- Incident response (Back Office, Per hour) — 1 credits / $25
+- Security policy pack (Back Office, 10 policies) — 17.25 credits / $431.25
+- Phishing simulation & awareness (Back Office, 1 campaign) — 7.25 credits / $181.25
+- Compliance readiness gap assessment (Back Office, 1 framework) — 28.75 credits / $718.75
+- Quarterly access review (Back Office, ≤50 users) — 5.75 credits / $143.75
+
+### Social
+- Community management (Growth, Per month) — 14.5 credits / $362.5
+
+### Social & Content
+- Social static post (Creative, 1 post) — 1.5 credits / $37.5
+- Carousel (Creative, 6–10 slides) — 3.5 credits / $87.5
+- Monthly social pack (Creative, 12 posts) — 17.25 credits / $431.25
+- LinkedIn thought-leadership post (Creative, ≤300 words) — 1 credits / $25
+
+### Tech Consulting
+- Technology stack audit (Strategy, 1 business) — 11.5 credits / $287.5
+- IT / technology roadmap (Strategy, 12 months) — 23 credits / $575
+- AI adoption roadmap (Strategy, 1 business) — 14.5 credits / $362.5
+- Digital transformation assessment (Strategy, 1 business) — 17.25 credits / $431.25
+- Solution architecture review (Strategy, 1 system) — 14.5 credits / $362.5
+
+### VR
+- Virtual showroom / VR walkthrough (Interactive (AR/VR/3D), 1 environment) — 86.5 credits / $2162.5
+- XR training module (Interactive (AR/VR/3D), ≤10 min) — 115.25 credits / $2881.25
+
+### Video & Motion
+- Short video edit (reel) (Creative, ≤60 sec) — 4.25 credits / $106.25
+- Long-form video edit (Creative, 3–10 min) — 14.5 credits / $362.5
+- Motion graphic (Creative, 15–30 sec) — 11.5 credits / $287.5
+- Logo animation (Creative, 5–10 sec) — 5.75 credits / $143.75
+- AI-generated video ad (Creative, 15–30 sec) — 14.5 credits / $362.5
+- Explainer video (Creative, 60–90 sec) — 28.75 credits / $718.75
+
+### Web 3D
+- Interactive 3D web experience (Interactive (AR/VR/3D), 1 experience) — 57.5 credits / $1437.5
+- Product configurator (Interactive (AR/VR/3D), ≤5 option sets) — 57.5 credits / $1437.5
+- Interactive microsite / scrollytelling (Interactive (AR/VR/3D), 1 microsite) — 43.25 credits / $1081.25
+
+### Workflows
+- Simple workflow (AI Automations, ≤5 nodes, 2 apps) — 3 credits / $75
+- Standard workflow (AI Automations, ≤15 nodes) — 8.75 credits / $218.75
+- Complex workflow (AI Automations, Multi-branch, 3+ systems) — 23 credits / $575
+
+## Pages
+- / — homepage
+- /gc3.html — capability hub
+- /capabilities.html — six catalogues
+- /solutions.html — pods
+- /products.html — products + credit explorer
+- /industries.html — industries
+- /compare.html — pods vs freelancer vs agency vs offshore GCC
+- /contracts.html — contract terms
+- /onboarding.html — five gates
+- /insights.html — insights
+- /company.html
+- /contact.html
+## Answers published on the site
+
+Q: What is GC3?
+A: GC3 is Quantocos's Global Cloud Capability Center: monthly subscription pods that pair named human specialists with AI agents to run creative, digital marketing, strategy, interactive, automation and back-office work inside the client's own tools.
+
+Q: What does a pod cost?
+A: Work is priced at $25 a credit. Creative is $3,000 a month for 120 credits, Digital $6,000 for 240 and Strategy $9,000 for 360. Prices are published; there is no setup fee and no exit fee.
+
+Q: How quickly does work start?
+A: Pods are staffed to overlap the client's business day and work inside their tools from the first week. Days 1-30 cover access, brand ingestion and the first brief.
+
+Q: What are the five gates?
+A: G1 brief approval, G2 direction selection, G3 internal QA, G4 client review with a 48 business-hour window, G5 go-live approval from pod lead and client. Nothing goes live without both signatures.
+
+Q: Who owns the work?
+A: Copyright and IP in everything produced assign to the client.
+
+Q: Is there a lock-in?
+A: Subscriptions run month to month with no setup fee and no exit fee; the minimum term and notice period are stated in the engagement letter.
+
+Q: Do unused credits roll over?
+A: No. Credits reset monthly.
+
+Q: How are credits tracked?
+A: Balance and burn rate stay visible in the portal, and credits are drawn down as work moves.

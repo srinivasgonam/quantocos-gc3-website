@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quantocos.com/products/saltpetre.html#webpage",
+      "url": "https://quantocos.com/products/saltpetre.html",
+      "name": "Saltpetre — signal from noise, into datasets and skills | Quantocos",
+      "description": "Saltpetre is Prism's research surface: ingest URLs, articles, images and video, extract the signal from the noise, and turn it into datasets, MCPs, plugins and skills that models can be trained on.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/products/saltpetre.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/products/saltpetre.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Saltpetre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Saltpetre is the research and data surface in Prism, in development. It ingests URLs, articles, images and video, filters the noise out of them, and turns what is left into datasets, MCPs, plugins and skills."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the outputs used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fine-tuning and training custom models, building agent skills, and feeding the group's own tools — including Caksh, which applies the same compositing idea to research data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it scrape the web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It ingests content a client is entitled to use, including their own archives and licensed sources. Data provenance is part of the surface, not an afterthought."
+          }
+        }
+      ]
+    }
+  ]
+}

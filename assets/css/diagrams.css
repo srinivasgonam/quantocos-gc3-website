@@ -1,0 +1,62 @@
+/* Diagrams: pod anatomy + capability map. Dark bands only.
+   Everything is visible by default; motion is added only when JS arms it. */
+.dg .sec-head h2 { color: #F7F6F2; }
+.dg .sec-head .lead { color: rgba(247,246,242,.76); }
+.dg .sec-head .eyebrow { color: #E8C98A; }
+
+/* ---------- pod anatomy ---------- */
+.anat__board { margin-top: 54px; display: flex; flex-direction: column; align-items: center; }
+.anat__row { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
+.anat__node { min-width: 240px; max-width: 300px; padding: 18px 20px; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; background: rgba(255,255,255,.03); }
+.anat__node b { display: block; margin: 6px 0 4px; font-family: "Source Serif 4", Georgia, serif; font-weight: 500; font-size: 21px; color: #F7F6F2; letter-spacing: -.01em; }
+.anat__node i { display: block; font-style: normal; font-size: 14px; line-height: 1.5; color: rgba(247,246,242,.66); }
+.anat__k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #D8A84E; }
+.anat__node--agent { border-color: rgba(216,168,78,.4); }
+.anat__node--gate { border-color: rgba(216,168,78,.7); background: rgba(216,168,78,.06); }
+.anat__link { position: relative; width: min(560px, 78%); height: 46px; }
+/* T-connector: one line down, a bar across the two cards below, two drops */
+.anat__link::before { content: ""; position: absolute; left: 50%; top: 0; width: 1px; height: 22px; background: rgba(255,255,255,.18); }
+.anat__link::after { content: ""; position: absolute; left: 25%; right: 25%; top: 22px; height: 1px; background: rgba(255,255,255,.18); }
+.anat__link i { position: absolute; top: 22px; width: 1px; height: 24px; background: rgba(255,255,255,.18); }
+.anat__link i:nth-child(1) { left: 25%; }
+.anat__link i:nth-child(2) { left: 75%; }
+.anat__link i::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 100%; background: linear-gradient(180deg, rgba(216,168,78,0), rgba(216,168,78,.85), rgba(216,168,78,0)); opacity: 0; }
+.dg-in .anat__link i::after { opacity: 1; animation: anat-flow 2.8s linear infinite; }
+.dg-in .anat__link i { animation: anat-flow 2.8s linear infinite; }
+@keyframes anat-flow { to { transform: translateY(100%); } }
+.anat__node { opacity: 1; transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); }
+.anat__row--2 .anat__node:nth-child(2) { transition-delay: .12s; }
+.anat__row--3 .anat__node:nth-child(2) { transition-delay: .24s; }
+.dg-armed .anat__node { opacity: 0; transform: translate3d(0,14px,0); }
+
+/* ---------- capability map ---------- */
+.cmap__board { position: relative; margin: 30px auto 0; width: 100%; max-width: 900px; height: 620px; }
+.cmap__hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 168px; height: 168px; border-radius: 50%; display: grid; place-content: center; text-align: center; border: 1px solid rgba(216,168,78,.55); background: radial-gradient(circle at 50% 40%, rgba(216,168,78,.16), rgba(11,18,32,.9) 70%); }
+.cmap__hub::after { content: ""; position: absolute; inset: -18px; border-radius: 50%; border: 1px solid rgba(216,168,78,.16); animation: hub-pulse 4s ease-out infinite; }
+@keyframes hub-pulse { 0% { transform: scale(.92); opacity: .8; } 70% { transform: scale(1.12); opacity: 0; } 100% { opacity: 0; } }
+.cmap__hub b { font-family: "Source Serif 4", Georgia, serif; font-size: 30px; font-weight: 500; color: #F7F6F2; }
+.cmap__hub span { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .12em; color: #E8C98A; }
+.cmap__node { position: absolute; left: 50%; top: 50%; width: 186px; padding: 14px 16px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(11,18,32,.72); text-decoration: none; transform: translate(-50%,-50%) rotate(var(--a)) translateY(-214px) rotate(calc(-1 * var(--a))); transition: border-color .3s ease, background .3s ease, box-shadow .3s ease; }
+.cmap__node b { display: block; font-family: "Source Serif 4", Georgia, serif; font-size: 19px; font-weight: 500; color: #F7F6F2; }
+.cmap__node span { display: block; margin-top: 3px; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .1em; color: rgba(247,246,242,.62); text-transform: uppercase; }
+.cmap__node:hover, .cmap__node:focus-visible { border-color: rgba(216,168,78,.8); background: rgba(216,168,78,.08); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.cmap__node { opacity: 1; transition: opacity .6s cubic-bezier(.22,1,.36,1), border-color .3s, background .3s, box-shadow .3s; }
+.cmap__node:nth-of-type(2) { transition-delay: .06s; }
+.cmap__node:nth-of-type(3) { transition-delay: .12s; }
+.cmap__node:nth-of-type(4) { transition-delay: .18s; }
+.cmap__node:nth-of-type(5) { transition-delay: .24s; }
+.cmap__node:nth-of-type(6) { transition-delay: .3s; }
+.dg-armed .cmap__node { opacity: 0; }
+
+@media (max-width: 760px) {
+  .anat__node { min-width: 100%; }
+  .anat__link { height: 34px; }
+  .cmap__board { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cmap__hub { position: static; transform: none; width: auto; height: auto; border-radius: 12px; padding: 18px; grid-column: 1 / -1; }
+  .cmap__hub::after { display: none; }
+  .cmap__node { position: static; transform: none; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cmap__hub::after, .anat__link i { animation: none; }
+  .dg-armed .anat__node, .dg-armed .cmap__node { opacity: 1; transform: none; transition: none; }
+}

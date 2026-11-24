@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://quantocos.com/#organization",
+      "name": "Quantocos Global Systems LLP",
+      "alternateName": "Quantocos",
+      "legalName": "Quantocos Global Systems LLP",
+      "url": "https://quantocos.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://quantocos.com/#logo",
+        "url": "https://quantocos.com/assets/img/logo-light.png",
+        "contentUrl": "https://quantocos.com/assets/img/logo-light.png",
+        "caption": "Quantocos Global Systems LLP"
+      },
+      "image": {
+        "@id": "https://quantocos.com/#logo"
+      },
+      "slogan": "Explore Possibilities.",
+      "description": "Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.",
+      "foundingDate": "2026-05-18",
+      "legalForm": "Limited Liability Partnership",
+      "identifier": "ACY-3556",
+      "naics": "541512",
+      "knowsAbout": [
+        "global capability centres",
+        "creative services subscriptions",
+        "answer engine optimisation",
+        "generative engine optimisation",
+        "digital marketing",
+        "brand and go-to-market strategy",
+        "AI agents and workflow automation",
+        "interactive 3D and XR development",
+        "real estate marketing",
+        "cloud platform engineering"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "European Union"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@quantocos.com",
+          "availableLanguage": [
+            "en"
+          ],
+          "areaServed": "US"
+        }
+      ],
+      "email": "hello@quantocos.com",
+      "sameAs": [
+        "https://quantocos.com/company.html",
+        "https://www.linkedin.com/company/quantocos"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://quantocos.com/capabilities/growth.html#webpage",
+      "url": "https://quantocos.com/capabilities/growth.html",
+      "name": "Digital marketing catalogue — SEO, AEO, paid media, analytics | Quantocos",
+      "description": "The Growth and digital marketing catalogue covers SEO, answer-engine optimisation (AEO/GEO), paid search and social, landing pages, analytics, lifecycle email and lead generation, delivered by pods from $6,000/month.",
+      "isPartOf": {
+        "@id": "https://quantocos.com/#website"
+      },
+      "about": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-17",
+      "dateReviewed": "2026-10-17",
+      "breadcrumb": {
+        "@id": "https://quantocos.com/capabilities/growth.html#breadcrumb"
+      },
+      "author": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://quantocos.com/#organization"
+      },
+      "license": "https://quantocos.com/licence"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quantocos.com/capabilities/growth.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is in the digital marketing catalogue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ten service lines: SEO, answer-engine and generative-engine visibility (AEO and GEO), paid search and social, programmatic and retail media, landing pages and conversion work, analytics and dashboards, lifecycle and email marketing, lead generation, community management, and SEO and content audits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between SEO and AEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO optimises for a ranked list of links. AEO and GEO optimise to be the answer a generative engine gives — quoted, cited and attributed — which depends on structured data, unambiguous claims and machine-readable facts rather than on keyword density."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which pods include digital marketing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Digital Pod at $6,000/month and the Strategy Pod at $9,000/month. The Creative Pod and REMAU do not — although REMAU includes real-estate digital marketing as part of its launch scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you do the technical SEO work as well?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Technical SEO, tracking implementation and analytics are inside the catalogue, because a campaign cannot be measured with broken instrumentation."
+          }
+        }
+      ]
+    }
+  ]
+}
