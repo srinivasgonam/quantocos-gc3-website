@@ -43,18 +43,18 @@
     return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
   }
 
-  var nodes = document.querySelectorAll('main p, main h1, main h2, main h3, main h4, main li, main td, main th, main a, main span, main strong, footer p, footer a');
+  var nodes = document.querySelectorAll('main p, main h1, main h2, main h3, main h4, main li, main td, main th, main a, main span, main strong, main .acc__btn, footer p, footer a');
   for (var i = 0; i < nodes.length; i++) {
     var el = nodes[i];
     if (!el.textContent.trim()) continue;
     if (el.classList.contains('sr-only') || el.hidden) continue;
-    if (el.children.length && !el.matches('a, span, strong, em, b, small')) continue;
+    if (el.children.length && !el.matches('a, span, strong, em, b, small, .acc__btn')) continue;
     var cs = getComputedStyle(el);
     if (cs.visibility === 'hidden' || parseFloat(cs.opacity) < 0.45) continue;
     var fg = rgb(cs.color);
     if (!fg) continue;
     var bg = bgOf(el);
-    if (ratio(fg, bg) >= (el.matches('a.link-arrow') ? 4.5 : 3)) continue;
+    if (ratio(fg, bg) >= (el.matches('a.link-arrow, .acc__btn') ? 4.5 : 3)) continue;
 
     /* pick the direction that the surface wants */
     var bgL = lum(bg);
