@@ -1,0 +1,32 @@
+/* Page hero backgrounds. The image sits on the right and fades out to the left and bottom,
+   so headlines, buttons and the stat bar always stay on the dark ground. */
+.hero > .pbg,.ind-hero > .pbg,.pbg-host > .pbg{position:absolute;inset:0 0 0 auto;z-index:0;width:66%;height:100%;overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.28) 26%,#000 62%),linear-gradient(180deg,#000 0 58%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.28) 26%,#000 62%),linear-gradient(180deg,#000 0 58%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-composite:intersect}
+.hero > .pbg--full{width:100%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 34%,#000 70%),linear-gradient(180deg,#000 0 62%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 34%,#000 70%),linear-gradient(180deg,#000 0 62%,transparent 100%)}
+.pbg > img{position:static;display:block;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover;object-position:50% 50%;opacity:.92;filter:none;transform:none}
+/* above the panel grid (which is z-index 1), below the copy (3) */
+.hero--panel > .pbg{z-index:2}
+.hero > .pbg--soft{width:100%;-webkit-mask-image:linear-gradient(90deg,transparent 0 22%,#000 58%),linear-gradient(180deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0 22%,#000 58%),linear-gradient(180deg,transparent 0,#000 30%)}
+.hero > .pbg--soft > img{opacity:.6}
+.hero--panel > .pbg:not(.pbg--soft) > img{opacity:.8}
+.pbg-host{position:relative;overflow:hidden}
+.pbg-host > .pbg > img{opacity:.55}
+.hero > .wrap,.ind-hero > :not(.pbg),.pbg-host > :not(.pbg){position:relative;z-index:3}
+
+@media (max-width:1200px){
+  .hero > .pbg > img,.hero--panel > .pbg:not(.pbg--soft) > img{opacity:.5}
+  .hero > .pbg > img[src*="-products"],.hero > .pbg > img[src*="-colorful"],.hero > .pbg > img[src*="-glossary"]{opacity:.34}
+}
+@media (max-width:860px){
+  .hero > .pbg,.hero > .pbg--full,.hero > .pbg--soft,.ind-hero > .pbg,.pbg-host > .pbg{width:100%;
+    -webkit-mask-image:linear-gradient(180deg,#000 0 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 0 45%,transparent 100%)}
+  .hero > .pbg > img,.hero--panel > .pbg:not(.pbg--soft) > img,.ind-hero > .pbg > img,.pbg-host > .pbg > img{opacity:.32}
+  .hero > .pbg > img[src*="-products"]{opacity:.18}
+  .hero > .pbg > img[src*="-colorful"]{opacity:.24}
+  .hero--panel > .pbg:not(.pbg--soft) > img[src*="-connectivity"]{opacity:.18}
+}
+@media print{.pbg{display:none}}
