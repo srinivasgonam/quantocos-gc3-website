@@ -94,13 +94,11 @@
       var r = h.getBoundingClientRect();
       if (r.top > vh || r.bottom < -200) return;
       if (h._fxInstant) { h._fxWords.forEach(function (w) { w.style.opacity = '1'; }); return; }
-      var p = (vh * 0.92 - r.top) / (vh * 0.5);
-      p = Math.max(0, Math.min(1, p));
-      var n = h._fxWords.length;
-      h._fxWords.forEach(function (w, i) {
-        var t = Math.max(0, Math.min(1, (p - (i / (n + 1.5))) * 2.6));
-        w.style.opacity = (0.15 + 0.85 * t).toFixed(3);
-      });
+      /* light the words once, in order, as soon as the heading enters; never leave it half-dim */
+      if (r.top < vh * 0.94) {
+        h._fxInstant = true;
+        h._fxWords.forEach(function (w, i) { w.style.transitionDelay = Math.min(i * 35, 350) + 'ms'; w.style.opacity = '1'; });
+      } else h._fxWords.forEach(function (w) { w.style.opacity = '0.3'; });
     });
 
     stackFrame();
@@ -114,25 +112,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
 
-
-  /* ---------- 9. internal links open in a new tab ---------- */
-  (function newTab(){
-    var here = location.pathname.split('/').pop() || 'index.html';
-    [].slice.call(document.querySelectorAll('a[href]')).forEach(function (a) {
-      var h = a.getAttribute('href');
-      if (!h || h.charAt(0) === '#' || /^(mailto:|tel:|javascript:)/i.test(h)) return;
-      if (!/\.html/i.test(h)) return;
-      if (h.split('#')[0].split('/').pop() === here) return;
-      a.target = '_blank';
-      a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener';
-      if (!a.querySelector('.sr-only')) {
-        var s = document.createElement('span');
-        s.className = 'sr-only';
-        s.textContent = ' (opens in a new tab)';
-        a.appendChild(s);
-      }
-    });
-  })();
 
   /* ---------- 6. loop budget: max 2 infinite animations per viewport ---------- */
   var loops = [].slice.call(document.querySelectorAll('*')).filter(function (el) {

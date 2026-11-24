@@ -1,0 +1,56 @@
+/* Site-wide consistency layer: loaded last on every page. */
+
+/* 1. Header: same solid surface over dark and light sections */
+header.hdr,.hdr{background-color:rgba(8,9,13,.95)!important}
+
+/* 2. One left and right edge: header, hero, sections and footer share it */
+.band > .wrap,.band > .wrap--wide{max-width:min(1360px,94vw)!important;padding-inline:var(--gutter)!important;margin-inline:auto!important}
+.ind-hero{max-width:none!important;width:100%!important;margin-inline:0!important;padding-inline:max(var(--gutter),calc((100% - min(1360px,94vw))/2 + var(--gutter)))!important;background-color:#05060a}
+
+/* 3. Hero: same start, same type on every page */
+.hero,.ind-hero{padding-top:96px!important;padding-bottom:86px!important}
+.hero .hero__inner{padding-top:0!important;padding-bottom:0}
+.hero .hero__crumb,.ind-hero .hero__crumb{margin:0 0 28px!important}
+.hero__title,.hero--panel .hero__title,.ind-hero__title,.pbg-host h1.display{font-family:"Plus Jakarta Sans","Inter",system-ui,sans-serif!important;font-weight:800!important}
+.ind-hero__title em{font-family:"Instrument Serif",Georgia,serif!important;font-weight:400!important;font-size:1.06em;letter-spacing:-.01em}
+.hero__title.mt-5,.ind-hero__title{margin-top:20px!important}
+.hero .hero__sub,.hero--panel .hero__sub,.ind-hero .hero__sub{font-size:clamp(1.0625rem,.98rem + .35vw,1.25rem)!important;line-height:1.6;margin-top:20px}
+.pbg-host{padding-top:96px!important}
+.pbg-host h1.display{font-size:var(--fs-h1)!important;line-height:1.08!important;letter-spacing:-.026em!important}
+
+
+.ind-hero .hero__crumb{margin-bottom:0!important}
+.hero .eyebrow + .hero__title{margin-top:20px!important}
+
+/* 4. Section headings, labels */
+main .cta__title,.band .sec-head h2,.band .split h2,.band .inner-grid h2,.ind-two h2,.ind-sectors h2,.band > .wrap > h2{font-family:"Plus Jakarta Sans","Inter",system-ui,sans-serif!important;font-weight:800!important;font-size:var(--fs-h2,2.625rem)!important;line-height:1.12!important;letter-spacing:-.02em!important}
+.eyebrow,.hero__crumb,.hero__crumb a{font-family:"IBM Plex Mono",ui-monospace,monospace!important}
+.hero .eyebrow,.ind-hero .eyebrow,.pbg-host .eyebrow{color:#e0a63a!important}
+
+/* 5. Buttons: one height per size, never stretched by a grid parent */
+.btn{min-height:52px;border-radius:4px}
+.btn--lg{min-height:60px}
+.btn--sm{min-height:40px}
+.stack > .btn:not(.btn--block),.split .btn:not(.btn--block),.inner-grid .btn:not(.btn--block){justify-self:start;align-self:flex-start;width:fit-content}
+.ftr__brand > .btn{justify-self:start;width:fit-content}
+
+/* 6. Nothing is left half-faded while it is being read */
+.band,.band > .wrap,.band > .wrap--wide,.sec-head,.card.reveal,.grid > .card,.cards-mobile > .card,.pf-strip > .pf,.pf:not([data-panel]),.ftr,footer{animation:none!important}
+.fx-w{transition:opacity .5s ease}
+
+@media (max-width:860px){
+  .hero,.ind-hero{padding-top:72px!important;padding-bottom:56px!important}
+  .pbg-host{padding-top:72px!important}
+}
+
+/* 7. Details */
+.hero .hero__inner{padding-bottom:48px!important}
+.ind-hero__title em{color:#f7f6f2!important;-webkit-text-fill-color:#f7f6f2!important;background:none!important;animation:none!important}
+.band--light tbody th,.band--light-2 tbody th,.band--light-warm tbody th{background:transparent!important;color:#0b1220!important}
+.pui-col,.pui-kicker,.pui-foot,.pui-foot b,.pui-col span{color:rgba(255,255,255,.72)!important}
+.l-kicker{font-family:"IBM Plex Mono",ui-monospace,monospace!important;font-size:12px!important;letter-spacing:.2em!important;text-transform:uppercase;color:#e0a63a!important;margin-bottom:14px}
+
+/* 8. Phones: one action bar on every page */
+.mobile-cta{display:none!important}
+@media (max-width:860px){.q-backtop{bottom:calc(88px + env(safe-area-inset-bottom,0px))!important}}
+main h2.calc-title{font-weight:800!important;font-size:var(--fs-h2,2.625rem)!important;line-height:1.12!important;letter-spacing:-.02em!important}

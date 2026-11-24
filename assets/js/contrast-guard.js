@@ -43,23 +43,36 @@
     return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
   }
 
-  var nodes = document.querySelectorAll('main p, main h1, main h2, main h3, main h4, main li, main td, main th, main a, main span, main strong, main .acc__btn, footer p, footer a');
+  function guard() {
+  var nodes = document.querySelectorAll('main p, main h1, main h2, main h3, main h4, main li, main td, main th, main a, main span, main strong, main em, main b, main i, main dt, main dd, main label, main legend, main small, main figcaption, main blockquote, main summary, main button, main caption, main div, footer p, footer a, footer span, footer h3');
   for (var i = 0; i < nodes.length; i++) {
     var el = nodes[i];
     if (!el.textContent.trim()) continue;
     if (el.classList.contains('sr-only') || el.hidden) continue;
-    if (el.children.length && !el.matches('a, span, strong, em, b, small, .acc__btn')) continue;
+    var own = false;
+    for (var k = el.firstChild; k; k = k.nextSibling) if (k.nodeType === 3 && k.textContent.trim().length > 1) { own = true; break; }
+    if (!own || el.closest('svg, .hfit, [aria-hidden="true"]')) continue;
     var cs = getComputedStyle(el);
-    if (cs.visibility === 'hidden' || parseFloat(cs.opacity) < 0.45) continue;
+    if (cs.webkitTextFillColor === 'rgba(0, 0, 0, 0)') continue;
     var fg = rgb(cs.color);
     if (!fg) continue;
     var bg = bgOf(el);
-    if (ratio(fg, bg) >= (el.matches('a.link-arrow, .acc__btn') ? 4.5 : 3)) continue;
+    var fa = parseFull(cs.color), al = fa && fa.length > 3 ? fa[3] : 1;
+    if (al < 1) fg = fg.map(function (v, j) { return v * al + bg[j] * (1 - al); });
+    var size = parseFloat(cs.fontSize), large = size >= 24 || (size >= 18.6 && parseInt(cs.fontWeight, 10) >= 700);
+    if (ratio(fg, bg) >= (large ? 3 : 4.5)) continue;
 
     /* pick the direction that the surface wants */
     var bgL = lum(bg);
-    el.style.setProperty('color', bgL > 0.45 ? '#0b1220' : '#f7f6f2', 'important');
+    var src = rgb(cs.color), gold = src[0] > src[2] + 60 && src[0] >= src[1];
+    el.style.setProperty('color', bgL > 0.35 ? (gold ? '#7a4f00' : '#0b1220') : (gold ? '#e0a63a' : '#f7f6f2'), 'important');
     /* an opacity dim from an animation can undo the fix — pin it */
-    if (parseFloat(cs.opacity) < 0.9) el.style.setProperty('opacity', '1', 'important');
+    if (parseFloat(cs.opacity) < 0.9 && parseFloat(cs.opacity) >= 0.45) el.style.setProperty('opacity', '1', 'important');
   }
+  }
+  guard();
+  /* again once scripted tables and tools have rendered */
+  window.addEventListener('load', function () { setTimeout(guard, 900); setTimeout(guard, 3000); });
+  var tm;
+  document.addEventListener('click', function () { clearTimeout(tm); tm = setTimeout(guard, 350); });
 })();
