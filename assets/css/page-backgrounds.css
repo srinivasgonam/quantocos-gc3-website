@@ -30,3 +30,10 @@
   .hero--panel > .pbg:not(.pbg--soft) > img[src*="-connectivity"]{opacity:.18}
 }
 @media print{.pbg{display:none}}
+
+/* Logo: header, mobile menu and footer */
+.brand > .brand__logo{display:block;width:152px!important;height:auto!important;max-width:none!important;filter:none!important;border-radius:0}
+.ftr__brand .brand > .brand__logo{width:190px!important}
+.drawer__head .brand > .brand__logo{width:140px!important}
+@media (max-width:480px){.hdr .brand > .brand__logo{width:136px!important}}
+.brand::before,.brand::after{content:none!important;display:none!important}
